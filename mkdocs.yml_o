@@ -1,0 +1,72 @@
+site_name: EStA
+
+theme:
+  name: "material"
+
+  locale: en
+  highlightjs: true  
+
+  features:
+    - content.code.copy
+    - content.code.annotate 
+    - content.code.select
+
+  markdown_extensions:
+    - pymdownx.highlight:
+        anchor_linenums: true
+        use_pygments: true
+    - pymdownx.superfences
+
+
+  palette:
+
+    # Palette toggle for automatic mode
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/brightness-auto
+        name: Switch to light mode
+
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default 
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to system preference
+
+
+plugins:
+  - search
+  - autorefs
+  - mkdocstrings:
+      default_handler: python
+      enabled: !ENV [ENABLE_MKDOCSTRINGS, true]
+      handlers:
+        python:
+          paths: [..]
+          options:
+            docstring_section_style: list
+            docstring_style: numpy
+            members_order: source
+            show_root_heading: true
+            show_source: false
+            show_signature_annotations: true          
+  - api-autonav:
+      modules: ['../vaspBag']
+
+
+nav:
+  - EStA Software: index.md
+  - tutorials.md
+  - How-To Guides: how-to-guides.md
+  - reference.md
+  - explanation.md    
+
+
+copyright: Copyright &copy; 2017-2025 <a href="https://skphy.github.io/esta">Sonu Kumar</a>.    
