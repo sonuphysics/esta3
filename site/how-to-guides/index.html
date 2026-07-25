@@ -54,6 +54,8 @@
     
       <link rel="stylesheet" href="../assets/_mkdocstrings.css">
     
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
     <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -88,6 +90,11 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
+      
+        
+        <a href="#how-to-guides" class="md-skip">
+          Skip to content
+        </a>
       
     </div>
     <div data-md-component="announce">
@@ -564,6 +571,20 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    How-To Guides
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -575,6 +596,148 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#installation-and-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installation and Setup
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#input-file-generation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Input File Generation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#output-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Output Analysis
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phonon-thermodynamic-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Phonon &amp; Thermodynamic Analysis
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transition-state-search" class="md-nav__link">
+    <span class="md-ellipsis">
+      Transition State Search
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#structure-manipulation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Structure Manipulation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-applications-use-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Applications &amp; Use Cases
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Key Applications & Use Cases">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-lattice-supercell-transformations" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Lattice &amp; Supercell Transformations
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-surface-interface-modeling" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Surface &amp; Interface Modeling
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-defect-disorder-engineering" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Defect &amp; Disorder Engineering
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-lattice-dynamics-thermal-transport" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Lattice Dynamics &amp; Thermal Transport
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-molecular-nanomaterial-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Molecular &amp; Nanomaterial Systems
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#metric-tensor-calculations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Metric Tensor Calculations
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -785,39 +948,9 @@
         
       
         
-          
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
       
         
           
-        
-      
-        
-          
-        
-      
         
       
         
@@ -851,6 +984,50 @@
         
       
         
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+          
+        
+      
+        
       
         
       
@@ -881,7 +1058,13 @@
         
       
         
+      
+        
+      
+        
           
+        
+      
         
       
         
@@ -958,17 +1141,84 @@
   
   
   
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_1_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../reference/esta/LLL/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code>LLL
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7_1_2" id="__nav_7_1_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_7_1_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_1_2">
+            <span class="md-nav__icon md-icon"></span>
+            <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code>LLL
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
     <li class="md-nav__item">
-      <a href="../reference/esta/._data.py__move2_lattice_table__removing_atomic_data/" class="md-nav__link">
+      <a href="../reference/esta/LLL/olll/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code>._data.py__move2_lattice_table__removing_atomic_data
+    <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code>olll
     
   </span>
   
 
       </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -1007,6 +1257,12 @@
       
         
           
+        
+      
+        
+      
+        
+      
         
       
         
@@ -1125,6 +1381,28 @@
   
   <span class="md-ellipsis">
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code>combined_excel
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/esta/aide/count_poscars/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code>count_poscars
     
   </span>
   
@@ -1428,11 +1706,55 @@
   
   
     <li class="md-nav__item">
+      <a href="../reference/esta/aide/scientific_to_readable/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code>scientific_to_readable
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../reference/esta/aide/string2integer/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code>string2integer
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/esta/aide/tmp_file_handling/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code>tmp_file_handling
     
   </span>
   
@@ -1568,6 +1890,28 @@
   
   
     <li class="md-nav__item">
+      <a href="../reference/esta/bond_length/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code>bond_length
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../reference/esta/bonds/" class="md-nav__link">
         
   
@@ -1600,6 +1944,119 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_1_10" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../reference/esta/cell/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code>cell
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7_1_10" id="__nav_7_1_10_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_7_1_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_1_10">
+            <span class="md-nav__icon md-icon"></span>
+            <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code>cell
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/esta/cell/Lattice_n_Pos_transform_ExtendSequize_adv/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code>Lattice_n_Pos_transform_ExtendSequize_adv
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/esta/cell/Lattice_n_Pos_transform_Supercell/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code>Lattice_n_Pos_transform_Supercell
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -1661,6 +2118,28 @@
   
   <span class="md-ellipsis">
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code>dat2xls_n_csv
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/esta/datadotpy__move2_lattice_table__removing_atomic_data/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code>datadotpy__move2_lattice_table__removing_atomic_data
     
   </span>
   
@@ -1850,7 +2329,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_1_18" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_1_21" >
         
           
           
@@ -1867,14 +2346,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_7_1_18" id="__nav_7_1_18_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_7_1_21" id="__nav_7_1_21_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_7_1_18_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7_1_18">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_7_1_21_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_1_21">
             <span class="md-nav__icon md-icon"></span>
             <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code>externalBag
           </label>
@@ -2107,7 +2586,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_1_18_11" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_1_21_11" >
         
           
           
@@ -2124,14 +2603,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_7_1_18_11" id="__nav_7_1_18_11_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_7_1_21_11" id="__nav_7_1_21_11_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_7_1_18_11_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7_1_18_11">
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_7_1_21_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_1_21_11">
             <span class="md-nav__icon md-icon"></span>
             <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code>xtb_ase
           </label>
@@ -2288,7 +2767,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_1_22" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_1_25" >
         
           
           
@@ -2305,14 +2784,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_7_1_22" id="__nav_7_1_22_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_7_1_25" id="__nav_7_1_25_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_7_1_22_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7_1_22">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_7_1_25_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_1_25">
             <span class="md-nav__icon md-icon"></span>
             <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code>gaussianBag
           </label>
@@ -2771,6 +3250,14 @@
       
         
       
+        
+      
+        
+      
+        
+      
+        
+      
     
     
       
@@ -2783,7 +3270,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_1_23" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_1_26" >
         
           
           
@@ -2800,14 +3287,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_7_1_23" id="__nav_7_1_23_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_7_1_26" id="__nav_7_1_26_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_7_1_23_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7_1_23">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_7_1_26_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_1_26">
             <span class="md-nav__icon md-icon"></span>
             <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code>general
           </label>
@@ -3460,11 +3947,55 @@
   
   
     <li class="md-nav__item">
+      <a href="../reference/esta/general/div_distance_adv/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code>div_distance_adv
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../reference/esta/general/entropy_data/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code>entropy_data
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/esta/general/excel2latex_/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code>excel2latex_
     
   </span>
   
@@ -3993,6 +4524,28 @@
   
   <span class="md-ellipsis">
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code>list_grouped_and_unique
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/esta/general/local_sites_finder_around_atom_STABLE_BEST/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code>local_sites_finder_around_atom_STABLE_BEST
     
   </span>
   
@@ -4758,6 +5311,28 @@
   
   
     <li class="md-nav__item">
+      <a href="../reference/esta/general/surface_adsorbate_dist_lookup_table/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code>surface_adsorbate_dist_lookup_table
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../reference/esta/general/symbol_from_atm_number/" class="md-nav__link">
         
   
@@ -5205,6 +5780,28 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../reference/esta/greek/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code>greek
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
     
     
       
@@ -5290,7 +5887,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_1_27" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_1_31" >
         
           
           
@@ -5307,14 +5904,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_7_1_27" id="__nav_7_1_27_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_7_1_31" id="__nav_7_1_31_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_7_1_27_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7_1_27">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_7_1_31_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_1_31">
             <span class="md-nav__icon md-icon"></span>
             <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code>grrmBag
           </label>
@@ -6083,7 +6680,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_1_28" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_1_32" >
         
           
           
@@ -6100,14 +6697,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_7_1_28" id="__nav_7_1_28_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_7_1_32" id="__nav_7_1_32_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_7_1_28_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7_1_28">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_7_1_32_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_1_32">
             <span class="md-nav__icon md-icon"></span>
             <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code>innout
           </label>
@@ -6195,6 +6792,28 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../reference/esta/kappalBag/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code>kappalBag
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
     
     
       
@@ -6218,7 +6837,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_1_31" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_1_36" >
         
           
           
@@ -6235,14 +6854,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_7_1_31" id="__nav_7_1_31_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_7_1_36" id="__nav_7_1_36_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_7_1_31_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7_1_31">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_7_1_36_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_1_36">
             <span class="md-nav__icon md-icon"></span>
             <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code>kspace
           </label>
@@ -6308,11 +6927,39 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../reference/esta/lat2atm_obj/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code>lat2atm_obj
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
     
     
       
         
           
+        
+      
+        
+      
+        
+      
         
       
         
@@ -6331,7 +6978,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_1_32" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_1_38" >
         
           
           
@@ -6348,19 +6995,63 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_7_1_32" id="__nav_7_1_32_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_7_1_38" id="__nav_7_1_38_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_7_1_32_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7_1_32">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_7_1_38_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_1_38">
             <span class="md-nav__icon md-icon"></span>
             <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code>lib_xyz
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/esta/lib_xyz/get_sdf_pubchem_database_molecules/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code>get_sdf_pubchem_database_molecules
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/esta/lib_xyz/get_xyz_pdb_jsonizsed_from_sdf/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code>get_xyz_pdb_jsonizsed_from_sdf
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
               
             
               
@@ -6397,6 +7088,28 @@
   
   <span class="md-ellipsis">
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code>load_data_
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/esta/lib_xyz/xyz2json/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code>xyz2json
     
   </span>
   
@@ -6488,7 +7201,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_1_35" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_1_41" >
         
           
           
@@ -6505,14 +7218,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_7_1_35" id="__nav_7_1_35_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_7_1_41" id="__nav_7_1_41_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_7_1_35_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7_1_35">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_7_1_41_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_1_41">
             <span class="md-nav__icon md-icon"></span>
             <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code>measure
           </label>
@@ -6645,7 +7358,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_1_38" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_1_44" >
         
           
           
@@ -6662,14 +7375,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_7_1_38" id="__nav_7_1_38_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_7_1_44" id="__nav_7_1_44_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_7_1_38_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7_1_38">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_7_1_44_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_1_44">
             <span class="md-nav__icon md-icon"></span>
             <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code>orcaBag
           </label>
@@ -6780,7 +7493,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_1_40" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_1_46" >
         
           
           
@@ -6797,14 +7510,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_7_1_40" id="__nav_7_1_40_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_7_1_46" id="__nav_7_1_46_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_7_1_40_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7_1_40">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_7_1_46_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_1_46">
             <span class="md-nav__icon md-icon"></span>
             <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code>ped
           </label>
@@ -6923,7 +7636,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_1_41" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_1_47" >
         
           
           
@@ -6940,14 +7653,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_7_1_41" id="__nav_7_1_41_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_7_1_47" id="__nav_7_1_47_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_7_1_41_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7_1_41">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_7_1_47_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_1_47">
             <span class="md-nav__icon md-icon"></span>
             <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code>phonon
           </label>
@@ -7382,7 +8095,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_1_42" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_1_48" >
         
           
           
@@ -7399,14 +8112,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_7_1_42" id="__nav_7_1_42_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_7_1_48" id="__nav_7_1_48_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_7_1_42_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7_1_42">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_7_1_48_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_1_48">
             <span class="md-nav__icon md-icon"></span>
             <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code>phononBag
           </label>
@@ -7577,7 +8290,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_1_42_8" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_1_48_8" >
         
           
           
@@ -7594,14 +8307,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_7_1_42_8" id="__nav_7_1_42_8_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_7_1_48_8" id="__nav_7_1_48_8_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_7_1_42_8_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7_1_42_8">
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_7_1_48_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_1_48_8">
             <span class="md-nav__icon md-icon"></span>
             <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code>phono3py
           </label>
@@ -7722,7 +8435,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_1_42_9" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_1_48_9" >
         
           
           
@@ -7739,14 +8452,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_7_1_42_9" id="__nav_7_1_42_9_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_7_1_48_9" id="__nav_7_1_48_9_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_7_1_42_9_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7_1_42_9">
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_7_1_48_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_1_48_9">
             <span class="md-nav__icon md-icon"></span>
             <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code>phonopy
           </label>
@@ -8041,7 +8754,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_1_43" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_1_49" >
         
           
           
@@ -8058,14 +8771,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_7_1_43" id="__nav_7_1_43_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_7_1_49" id="__nav_7_1_49_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_7_1_43_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7_1_43">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_7_1_49_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_1_49">
             <span class="md-nav__icon md-icon"></span>
             <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code>plot
           </label>
@@ -8780,6 +9493,16 @@
       
         
       
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
     
     
       
@@ -8792,7 +9515,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_1_48" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_1_54" >
         
           
           
@@ -8809,14 +9532,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_7_1_48" id="__nav_7_1_48_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_7_1_54" id="__nav_7_1_54_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_7_1_48_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7_1_48">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_7_1_54_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_1_54">
             <span class="md-nav__icon md-icon"></span>
             <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code>qeBag
           </label>
@@ -8985,28 +9708,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../reference/esta/qeBag/gen_qeinput_adv0/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code>gen_qeinput_adv0
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../reference/esta/qeBag/gen_qeinput_advv/" class="md-nav__link">
         
   
@@ -9056,6 +9757,28 @@
   
   <span class="md-ellipsis">
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code>get_kohn_sham_energy
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/esta/qeBag/get_kpath_bandstr/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code>get_kpath_bandstr
     
   </span>
   
@@ -9210,6 +9933,116 @@
   
   <span class="md-ellipsis">
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code>parse_pseudo
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/esta/qeBag/poscar_from_qe_input/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code>poscar_from_qe_input
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/esta/qeBag/poscar_from_qe_input0/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code>poscar_from_qe_input0
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/esta/qeBag/poscar_from_qe_input1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code>poscar_from_qe_input1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/esta/qeBag/poscar_from_qe_input2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code>poscar_from_qe_input2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/esta/qeBag/poscar_from_qe_input3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code>poscar_from_qe_input3
     
   </span>
   
@@ -9608,6 +10441,28 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../reference/esta/ris2bib_adv/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code>ris2bib_adv
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
     
     
       
@@ -9629,7 +10484,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_1_49" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_1_56" >
         
           
           
@@ -9646,14 +10501,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_7_1_49" id="__nav_7_1_49_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_7_1_56" id="__nav_7_1_56_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_7_1_49_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7_1_49">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_7_1_56_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_1_56">
             <span class="md-nav__icon md-icon"></span>
             <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code>rmsd
           </label>
@@ -9686,6 +10541,28 @@
           </ul>
         </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/esta/see_markdown_mdutils/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code>see_markdown_mdutils
+    
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -9744,7 +10621,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_1_51" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_1_59" >
         
           
           
@@ -9761,14 +10638,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_7_1_51" id="__nav_7_1_51_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_7_1_59" id="__nav_7_1_59_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_7_1_51_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7_1_51">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_7_1_59_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_1_59">
             <span class="md-nav__icon md-icon"></span>
             <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code>spaceGroup
           </label>
@@ -9857,6 +10734,28 @@
   
   
     <li class="md-nav__item">
+      <a href="../reference/esta/special_symbol/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code>special_symbol
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../reference/esta/string2integer/" class="md-nav__link">
         
   
@@ -9921,7 +10820,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_1_54" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_1_63" >
         
           
           
@@ -9938,14 +10837,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_7_1_54" id="__nav_7_1_54_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_7_1_63" id="__nav_7_1_63_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_7_1_54_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7_1_54">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_7_1_63_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_1_63">
             <span class="md-nav__icon md-icon"></span>
             <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code>surfReact
           </label>
@@ -10060,7 +10959,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_1_57" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_1_66" >
         
           
           
@@ -10077,14 +10976,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_7_1_57" id="__nav_7_1_57_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_7_1_66" id="__nav_7_1_66_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_7_1_57_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7_1_57">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_7_1_66_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_1_66">
             <span class="md-nav__icon md-icon"></span>
             <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code>transitionState
           </label>
@@ -10235,6 +11134,8 @@
       
         
       
+        
+      
     
     
       
@@ -10247,7 +11148,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_1_59" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_1_68" >
         
           
           
@@ -10264,14 +11165,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_7_1_59" id="__nav_7_1_59_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_7_1_68" id="__nav_7_1_68_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_7_1_59_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7_1_59">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_7_1_68_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_1_68">
             <span class="md-nav__icon md-icon"></span>
             <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code>vaspBag
           </label>
@@ -10372,6 +11273,10 @@
       
         
       
+        
+      
+        
+      
     
     
       
@@ -10384,7 +11289,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_1_59_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_1_68_4" >
         
           
           
@@ -10401,14 +11306,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_7_1_59_4" id="__nav_7_1_59_4_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_7_1_68_4" id="__nav_7_1_68_4_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_7_1_59_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7_1_59_4">
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_7_1_68_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_1_68_4">
             <span class="md-nav__icon md-icon"></span>
             <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code>inout
           </label>
@@ -10489,11 +11394,55 @@
   
   
     <li class="md-nav__item">
+      <a href="../reference/esta/vaspBag/inout/crystal_lattice_stable19072026/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code>crystal_lattice_stable19072026
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../reference/esta/vaspBag/inout/diameter_or_area_nanowire/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code>diameter_or_area_nanowire
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/esta/vaspBag/inout/get_kpath_bandstr/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code>get_kpath_bandstr
     
   </span>
   
@@ -10835,6 +11784,8 @@
       
         
       
+        
+      
     
     
       
@@ -10847,7 +11798,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_1_59_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_1_68_5" >
         
           
           
@@ -10864,14 +11815,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_7_1_59_5" id="__nav_7_1_59_5_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_7_1_68_5" id="__nav_7_1_68_5_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_7_1_59_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7_1_59_5">
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_7_1_68_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_1_68_5">
             <span class="md-nav__icon md-icon"></span>
             <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code>postproc
           </label>
@@ -10896,6 +11847,632 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_1_68_5_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../reference/esta/vaspBag/postproc/planarAverage/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code>planarAverage
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7_1_68_5_3" id="__nav_7_1_68_5_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_7_1_68_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_1_68_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code>planarAverage
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/esta/vaspBag/postproc/planarAverage/grid_data_reading/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code>grid_data_reading
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/esta/vaspBag/postproc/planarAverage/grid_data_reading_/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code>grid_data_reading_
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/esta/vaspBag/postproc/planarAverage/input_data/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code>input_data
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_1_68_5_3_5" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../reference/esta/vaspBag/postproc/planarAverage/isosurface/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code>isosurface
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7_1_68_5_3_5" id="__nav_7_1_68_5_3_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="6" aria-labelledby="__nav_7_1_68_5_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_1_68_5_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code>isosurface
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/esta/vaspBag/postproc/planarAverage/isosurface/atoms/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code>atoms
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/esta/vaspBag/postproc/planarAverage/isosurface/isosurface/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code>isosurface
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/esta/vaspBag/postproc/planarAverage/isosurface/isosurface_/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code>isosurface_
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/esta/vaspBag/postproc/planarAverage/planar_average/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code>planar_average
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/esta/vaspBag/postproc/planarAverage/planar_average_/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code>planar_average_
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/esta/vaspBag/postproc/planarAverage/test_planar_average_new/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code>test_planar_average_new
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_1_68_5_3_9" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../reference/esta/vaspBag/postproc/planarAverage/v0pt4_stable/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code>v0pt4_stable
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7_1_68_5_3_9" id="__nav_7_1_68_5_3_9_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="6" aria-labelledby="__nav_7_1_68_5_3_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_1_68_5_3_9">
+            <span class="md-nav__icon md-icon"></span>
+            <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code>v0pt4_stable
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/esta/vaspBag/postproc/planarAverage/v0pt4_stable/grid_data_reading/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code>grid_data_reading
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/esta/vaspBag/postproc/planarAverage/v0pt4_stable/input_data/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code>input_data
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/esta/vaspBag/postproc/planarAverage/v0pt4_stable/planar_average/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code>planar_average
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_1_68_5_3_10" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../reference/esta/vaspBag/postproc/planarAverage/v0pt6_this/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code>v0pt6_this
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7_1_68_5_3_10" id="__nav_7_1_68_5_3_10_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="6" aria-labelledby="__nav_7_1_68_5_3_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_1_68_5_3_10">
+            <span class="md-nav__icon md-icon"></span>
+            <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code>v0pt6_this
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/esta/vaspBag/postproc/planarAverage/v0pt6_this/grid_data_reading/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code>grid_data_reading
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/esta/vaspBag/postproc/planarAverage/v0pt6_this/input_data/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code>input_data
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/esta/vaspBag/postproc/planarAverage/v0pt6_this/planar_average/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code>planar_average
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -10936,7 +12513,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_1_59_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_1_68_6" >
         
           
           
@@ -10953,14 +12530,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_7_1_59_6" id="__nav_7_1_59_6_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_7_1_68_6" id="__nav_7_1_68_6_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_7_1_59_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7_1_59_6">
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_7_1_68_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_1_68_6">
             <span class="md-nav__icon md-icon"></span>
             <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code>rotateAxisUnitCell
           </label>
@@ -10993,6 +12570,28 @@
           </ul>
         </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/esta/vaspBag/rotate_axes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code>rotate_axes
+    
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -11057,7 +12656,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_1_60" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_1_69" >
         
           
           
@@ -11074,14 +12673,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_7_1_60" id="__nav_7_1_60_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_7_1_69" id="__nav_7_1_69_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_7_1_60_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7_1_60">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_7_1_69_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_1_69">
             <span class="md-nav__icon md-icon"></span>
             <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code>xtbBag
           </label>
@@ -11195,6 +12794,139 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#installation-and-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installation and Setup
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#input-file-generation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Input File Generation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#output-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Output Analysis
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phonon-thermodynamic-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Phonon &amp; Thermodynamic Analysis
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transition-state-search" class="md-nav__link">
+    <span class="md-ellipsis">
+      Transition State Search
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#structure-manipulation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Structure Manipulation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-applications-use-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Applications &amp; Use Cases
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Key Applications & Use Cases">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-lattice-supercell-transformations" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Lattice &amp; Supercell Transformations
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-surface-interface-modeling" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Surface &amp; Interface Modeling
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-defect-disorder-engineering" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Defect &amp; Disorder Engineering
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-lattice-dynamics-thermal-transport" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Lattice Dynamics &amp; Thermal Transport
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-molecular-nanomaterial-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Molecular &amp; Nanomaterial Systems
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#metric-tensor-calculations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Metric Tensor Calculations
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -11210,76 +12942,119 @@
 
 
 
-  <h1>How-To Guides</h1>
-
 <hr />
-<p>This part of the project documentation focuses on a <strong>problem-oriented</strong> approach.
-Based on the documentation for EStA v3, here are concrete guide ideas &amp; how you might structure them, with relevant modules</p>
+<p>This part of the project documentation focuses on a <strong>problem-oriented</strong> approach.<br />
+It provides practical, step-by-step guides to help you solve real-world tasks using <strong>EStA</strong>.</p>
 <hr />
-<!-- - Modules in EStA -->
-<!-- `cf` is converion factor module which can handle conversion of units of measurement from one system 
-to another. It is used in the following way: -->
-
+<h1 id="how-to-guides">How-To Guides<a class="headerlink" href="#how-to-guides" title="Permanent link">&para;</a></h1>
+<p>These guides walk you through common workflows — from installation to advanced analysis — with clear examples and code snippets.</p>
+<h3 id="installation-and-setup"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 20h14v-2H5m14-9h-4V3H9v6H5l7 7z"/></svg></span> Installation and Setup<a class="headerlink" href="#installation-and-setup" title="Permanent link">&para;</a></h3>
+<p><strong>How to install EStA and set up your environment</strong></p>
+<p>Learn how to get EStA up and running quickly.</p>
 <ul>
-<li>How to install EStA and set up environment  <a href="https://sonuphysics.github.io/esta3/explanation">click here</a><ul>
-<li><code>Install via pip / conda / from source</code></li>
-<li><code>Installing dependencies (ase, spglib, Fortran parts, C parts, etc.)</code></li>
-<li><code>Verifying the installation works by using tutorials</code></li>
+<li>Install via <strong>pip</strong>, <strong>conda</strong>, or from source [TODO]</li>
+<li>Installing dependencies (<code>ase</code>, <code>spglib</code>, Fortran/C extensions, etc.)</li>
+<li>Verifying the installation with built-in tests and tutorials [on-going]</li>
 </ul>
-</li>
-</ul>
+<p><a class="md-button md-button--primary" href="https://sonuphysics.github.io/esta3/explanation" style="background-color:rgba(20, 182, 36, 0.68); color: white; font-weight: bold;"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 15V9h8V4.16L19.84 12 12 19.84V15z"/></svg></span> Get Started →</a></p>
 <hr />
+<h3 id="input-file-generation"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg></span> Input File Generation<a class="headerlink" href="#input-file-generation" title="Permanent link">&para;</a></h3>
+<p><strong>How to automatically generate input files for calculations</strong></p>
+<p>Create high-quality input files for leading electronic structure codes in seconds.</p>
 <ul>
-<li>How to generate input files for a calculation (VASP / Quantum‑ESPRESSO / Gaussian, etc.)  <a href="https://sonuphysics.github.io/esta3/tutorials/">click here</a><ul>
-<li><code>Using esta.qeBag.gen_qeinput or gen_qeinput2 etc.</code></li>
-<li><code>Setup of input parameters (k‑points, pseudopotentials, etc.)</code></li>
+<li>Generate inputs for <strong>VASP</strong>, <strong>Quantum ESPRESSO</strong>, <strong>Gaussian</strong>, and more</li>
+<li>Configure k-points, pseudopotentials, convergence parameters, and advanced settings</li>
+<li>Use convenient functions like <code>esta.qeBag.gen_qeinput()</code> and <code>gen_qeinput2()</code></li>
 </ul>
-</li>
-</ul>
+<p><a class="md-button md-button--primary" href="https://sonuphysics.github.io/esta3/tutorials/" style="background-color:rgb(20, 182, 36); color: white; font-weight: bold;"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 15V9h8V4.16L19.84 12 12 19.84V15z"/></svg></span> Learn More →</a></p>
 <hr />
+<h3 id="output-analysis"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22 21H2V3h2v16h2v-9h4v9h2V6h4v13h2v-5h4z"/></svg></span> Output Analysis<a class="headerlink" href="#output-analysis" title="Permanent link">&para;</a></h3>
+<p><strong>How to read and analyze results from electronic structure calculations</strong></p>
+<p>Extract valuable insights from simulation outputs efficiently.</p>
 <ul>
-<li>How to read and analyze outputs from those softwares <ul>
-<li>Extracting bands, k‑points, band gaps via esta.qeBag.bands_kpts_band_gap etc. </li>
-<li>Reading force constants etc. via phonon subpackage </li>
-</ul>
-</li>
+<li>Extract electronic band structures, k-points, and band gaps (<code>esta.qeBag.bands_kpts_band_gap</code>)</li>
+<li>Parse force constants and phonon data from the <code>phonon</code> subpackage</li>
+<li>Handle multiple output formats (XML, JSON, YAML, etc.)</li>
 </ul>
 <hr />
+<h3 id="phonon-thermodynamic-analysis"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 6a6 6 0 0 1 6 6c0 2.22-1.21 4.16-3 5.2V19a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1v-1.8c-1.79-1.04-3-2.98-3-5.2a6 6 0 0 1 6-6m2 15v1a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1v-1zm6-10h3v2h-3zM1 11h3v2H1zM13 1v3h-2V1zM4.92 3.5l2.13 2.14-1.42 1.41L3.5 4.93zm12.03 2.13 2.12-2.13 1.43 1.43-2.13 2.12z"/></svg></span> Phonon &amp; Thermodynamic Analysis<a class="headerlink" href="#phonon-thermodynamic-analysis" title="Permanent link">&para;</a></h3>
+<p><strong>How to perform vibrational and thermodynamic calculations</strong></p>
 <ul>
-<li>How to perform phonon / vibrational / thermodynamic analysis <ul>
-<li>Using esta.phonon modules to get frequencies, force constants, zero point energy, etc.  </li>
-</ul>
-</li>
+<li>Compute phonon frequencies, densities of states, and thermodynamic properties</li>
+<li>Analyze zero-point energy, free energy, and heat capacity</li>
+<li>Extract and interpret force constants from Phonopy or internal calculations</li>
 </ul>
 <hr />
+<h3 id="transition-state-search"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.5 12c2.5 0 4.5 2 4.5 4.5 0 .88-.25 1.71-.69 2.4l3.08 3.1L21 23.39l-3.12-3.07c-.69.43-1.51.68-2.38.68-2.5 0-4.5-2-4.5-4.5s2-4.5 4.5-4.5m0 2a2.5 2.5 0 0 0-2.5 2.5 2.5 2.5 0 0 0 2.5 2.5 2.5 2.5 0 0 0 2.5-2.5 2.5 2.5 0 0 0-2.5-2.5M14 6.11 8 4v11.89l1 .35v.26c0 .64.09 1.26.26 1.84L8 17.9l-5.34 2.07-.16.03a.5.5 0 0 1-.5-.5V4.38c0-.23.15-.41.36-.48L8 2l6 2.1L19.34 2h.16a.5.5 0 0 1 .5.5v9.31A6.48 6.48 0 0 0 15.5 10c-.5 0-1 .06-1.5.17z"/></svg></span> Transition State Search<a class="headerlink" href="#transition-state-search" title="Permanent link">&para;</a></h3>
+<p><strong>How to find transition states and NEB paths</strong></p>
 <ul>
-<li>How to find transition states / NEB paths <ul>
-<li>Using esta.transitionState.neb, optimizer etc. </li>
-</ul>
-</li>
+<li>Set up and run <strong>CI-NEB</strong> calculations (interfaced with Quantum ESPRESSO)</li>
+<li>Optimize reaction pathways using <code>esta.transitionState.neb</code> and associated optimizers</li>
+<li>Visualize minimum energy paths</li>
 </ul>
 <hr />
+<h3 id="structure-manipulation"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 22v-2h3v-3h2v3.5c0 .39-.16.74-.46 1.04s-.65.46-1.04.46zM7 22H3.5c-.39 0-.74-.16-1.04-.46S2 20.89 2 20.5V17h2v3h3zM17 2h3.5c.39 0 .74.16 1.04.46s.46.65.46 1.04V7h-2V4h-3zM7 2v2H4v3H2V3.5c0-.39.16-.74.46-1.04S3.11 2 3.5 2zm6 15.25 4-2.3v-4.59l-4 2.3zm-1-6.33 4-2.29-4-2.35-4 2.35zm-5 4.03 4 2.3v-4.59l-4-2.3zm11.23-7.36c.5.32.77.75.77 1.32v6.32c0 .57-.27 1-.77 1.32l-5.48 3.18q-.75.48-1.5 0l-5.48-3.18c-.5-.32-.77-.75-.77-1.32V8.91c0-.57.27-1 .77-1.32l5.48-3.18c.25-.13.5-.19.75-.19s.5.06.75.19z"/></svg></span> Structure Manipulation<a class="headerlink" href="#structure-manipulation" title="Permanent link">&para;</a></h3>
+<p><strong>How to modify and transform atomic structures</strong></p>
+<p>Powerful tools for crystal and molecular engineering:</p>
 <ul>
-<li>How to manipulate / modify structures <ul>
-<li>E.g. deleting atoms, substitution, cell transformations, vacuum region etc. via esta.general submodules  </li>
-</ul>
+<li>Atomic substitution, deletion, and duplication</li>
+<li>Cell transformations, vacuum layer addition, and supercell creation</li>
+<li>
+<p>Lattice and coordinate manipulations via the <code>esta.general</code> module</p>
 </li>
+<li>
+<p><strong>Modelling Real-World Physics &amp; Imperfections:</strong> Idealized periodic bulk crystals are rare in nature. Manipulating structures allows researchers to model real-world complexities such as defects, grain boundaries, surfaces, and interfaces.</p>
+</li>
+<li><strong>Exploring Potential Energy Surfaces (PES):</strong> By systematically distorting cell parameters, straining lattices, or displacing atoms, computational scripts can map out energy landscapes, phase transition pathways, and reaction barriers.</li>
+<li><strong>Reducing Computational Cost:</strong> Creating high-symmetry primitive cells or minimal representative supercells reduces the number of degrees of freedom, dramatically accelerating Density Functional Theory (DFT) calculations.</li>
+<li><strong>Bridge Between Experiments and Theory:</strong> Manipulating crystal lattices allows direct matching of experimental conditions such as high pressure, epitaxial strain in thin films, or high temperature expansion.</li>
+<li><strong>Automated Data Generation for AI/ML:</strong> Large-scale high-throughput screening relies on programmatic structure manipulation to generate thousands of diverse atomic configurations for training Machine Learning Interatomic Potentials (MLIPs).</li>
 </ul>
-<hr />
+<h3 id="key-applications-use-cases"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.7 18.6v-1l1.1-.8c.1-.1.2-.2.1-.3l-1-1.7c0-.1-.2-.1-.3-.1l-1.2.5c-.3-.2-.6-.4-.9-.5l-.2-1.3c0-.1-.1-.2-.2-.2h-2c-.2 0-.3.1-.3.2l-.2 1.3c-.3.2-.5.3-.8.5l-1.2-.5c-.1 0-.2 0-.3.1l-1 1.7c0 .1 0 .2.1.3l1.1.8v1l-1.1.8c-.1.1-.2.2-.1.3l1 1.7c.1.1.2.1.3.1l1.2-.5c.2.2.5.4.8.5l.2 1.3c.1.1.2.2.3.2h2c.1 0 .2-.1.2-.2l.2-1.3c.3-.2.5-.3.8-.5l1.2.4c.1 0 .2 0 .3-.1l1-1.7c.1-.1.1-.2 0-.2zm-3.7.9c-.8 0-1.5-.7-1.5-1.5s.7-1.5 1.5-1.5 1.5.7 1.5 1.5-.7 1.5-1.5 1.5M11 18c0-3.9 3.1-7 7-7 2 0 3.7.8 5 2.1V4c0-1.1-.9-2-2-2H3c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h9.3c-.8-1.1-1.3-2.5-1.3-4M3 4h18v3H3z"/></svg></span> Key Applications &amp; Use Cases<a class="headerlink" href="#key-applications-use-cases" title="Permanent link">&para;</a></h3>
+<h4 id="1-lattice-supercell-transformations">1. Lattice &amp; Supercell Transformations<a class="headerlink" href="#1-lattice-supercell-transformations" title="Permanent link">&para;</a></h4>
 <ul>
-<li>How to use machine learning parts <ul>
-<li>Regression or classification tasks using esta.mlBag etc. if available. Create a UML example: train on data, predict properties.  </li>
+<li><strong>Primitive to Conventional Conversions:</strong> Converting primitive cells to conventional cells (and vice versa) for standardized physical analysis and visualization.</li>
+<li><strong>Supercell Generation:</strong> Scaling unit cells (<span class="arithmatex">\(N \times M \times K\)</span>) to model low-concentration dopants, alloy disorder, or long-wavelength acoustic phonons.</li>
+<li><strong>Lattice Strain &amp; Stress Simulation:</strong> Applying uniaxial, biaxial, or hydrostatic strain to evaluate elastic constants (<span class="arithmatex">\(C_{ij}\)</span>), piezoelectric response, or strain-engineered bandgap tuning.</li>
 </ul>
-</li>
-</ul>
-<hr />
+<h4 id="2-surface-interface-modeling">2. Surface &amp; Interface Modeling<a class="headerlink" href="#2-surface-interface-modeling" title="Permanent link">&para;</a></h4>
 <ul>
-<li>Working example from start to finish<ul>
-<li>Pick a physical system (maybe a small molecule or simple crystal), perform structuring, run calculation, extract bands, compute phonons, etc. That will tie many features together for a demo. </li>
+<li><strong>Slab Generation &amp; Vacuum Padding:</strong> Cutting specific Miller indices <span class="arithmatex">\((hkl)\)</span> to create surfaces and adding vacuum layers to isolate periodic images in 2D or surface calculations.</li>
+<li><strong>Heterostructure &amp; Interface Building:</strong> Matching lattice constants between disparate materials to model semiconductor heterojunctions, catalyst-support interfaces, or van der Waals stacks.</li>
+<li><strong>Adsorption Site Identification:</strong> Generating symmetric binding positions on surface sites for molecule-catalyst interaction studies (e.g., ORR, HER, NR3).</li>
 </ul>
-</li>
+<h4 id="3-defect-disorder-engineering">3. Defect &amp; Disorder Engineering<a class="headerlink" href="#3-defect-disorder-engineering" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Point Defects:</strong> Creating vacancies, substitutional impurities, and interstitial atoms to compute formation energies and defect transition levels.</li>
+<li><strong>Extended Defects:</strong> Building dislocations, stacking faults, and grain boundaries to evaluate mechanical degradation and thermal boundary resistance.</li>
+<li><strong>Special Quasirandom Structures (SQS):</strong> Generating disordered solid-solution models that mimic random alloys without requiring infinite cell sizes.</li>
+</ul>
+<h4 id="4-lattice-dynamics-thermal-transport">4. Lattice Dynamics &amp; Thermal Transport<a class="headerlink" href="#4-lattice-dynamics-thermal-transport" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Finite-Displacement Phonon Calculations:</strong> Displacing individual atoms along symmetry-inequivalent directions to calculate force constants, phonon dispersion relations, and thermal conductivity.</li>
+<li><strong>Thermal Expansion &amp; Anharmonicity:</strong> Modifying cell volumes to simulate Quasi-Harmonic Approximation (QHA) parameters for high-temperature thermodynamic properties.</li>
+</ul>
+<h4 id="5-molecular-nanomaterial-systems">5. Molecular &amp; Nanomaterial Systems<a class="headerlink" href="#5-molecular-nanomaterial-systems" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Conformational Sampling:</strong> Rotating molecular dihedral angles and bonds to identify low-energy conformers.</li>
+<li><strong>Nanotube &amp; Nanoribbon Construction:</strong> Rolling up 2D sheets (e.g., graphene, MoS₂) into 1D nanotubes or cutting them into nanoribbons with specified edge terminations (zigzag/armchair).</li>
 </ul>
 <hr />
+<h2 id="metric-tensor-calculations"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 2h4v2H4v16h2v2H2zm18 2h-2V2h4v20h-4v-2h2zM9 5h1v5h1v1H8v-1h1V6l-1 .5v-1zm6 8h1v5h1v1h-3v-1h1v-4l-1 .5v-1zm-6 0c1.1 0 2 1.34 2 3s-.9 3-2 3-2-1.34-2-3 .9-3 2-3m0 1c-.55 0-1 .9-1 2s.45 2 1 2 1-.9 1-2-.45-2-1-2m6-9c1.1 0 2 1.34 2 3s-.9 3-2 3-2-1.34-2-3 .9-3 2-3m0 1c-.55 0-1 .9-1 2s.45 2 1 2 1-.9 1-2-.45-2-1-2"/></svg></span> Metric Tensor Calculations<a class="headerlink" href="#metric-tensor-calculations" title="Permanent link">&para;</a></h2>
+<p><strong>How to compute the metric tensor of a lattice</strong></p>
+<p>EStA provides dedicated tools to calculate the <strong>metric tensor</strong> (<code>g</code>) and its inverse for any crystal lattice. This is essential for:</p>
+<ul>
+<li>Computing interatomic distances and angles accurately</li>
+<li>Transforming coordinates between Cartesian and fractional systems</li>
+<li>Analyzing lattice symmetry and strain</li>
+</ul>
+<p><strong>Example usage:</strong></p>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">from</span> <span class="nn">esta.general</span> <span class="kn">import</span> <span class="n">metric_tensor</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="c1">#Compute metric tensor from lattice vectors</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="n">g</span> <span class="o">=</span> <span class="n">metric_tensor</span><span class="p">(</span><span class="n">lattice_vectors</span><span class="p">)</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="nb">print</span><span class="p">(</span><span class="n">g</span><span class="p">)</span>
+</span></code></pre></div>
 
 
 

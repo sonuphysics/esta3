@@ -1,108 +1,87 @@
+**EStA: Electronic Structure Automator**
 
->**EStA : Electronic Structure Automater** 
-![EStA](./image/logo.jpg)
- 
+<!-- *![EStA](./image/logo.jpg)  -->
 
-`Electronic Structure Automater` ([EStA](home-page)) aka pytware for analyzing and calculating to some extent the properties 
-of materials and molecules.
+<!-- ![The EStA logo](img/esta_logo2.6.0_cropped.png){: style="width:350px; height:200px;" } -->
+![The EStA logo](img/esta_logo2.6.0_cropped.png){: style="display: block; margin: 0 auto; width: 450px; height:250px;"}
 
-1. EStA software package is capable of analyzing, pre-processing, and post-processing data from different software packages such as `vasp`, `quantum-espresso`, `gaussian`, `xTB`,  `Orca`,  and so on. 
+**Electronic Structure Automator** (EStA) is a Python-based software package (with components in modern Fortran and C) designed for analyzing, pre-processing, and post-processing data from various electronic structure calculation codes. It supports packages such as **VASP**, **Quantum ESPRESSO**, **Gaussian**, **xTB**, **ORCA**, and others.
 
-3. It can automatically generate input files for vasp, quantum-esspresso, gaussian, grrm, and other 
-codes as well can do some model calculations. It is written in `python3`, `modern Fotran`, and some 
-part in `C`. In future, it will be able to perform calculations for predicting electronic and transport properties.
+EStA automates input file generation for multiple codes, performs model calculations, and provides tools for materials and molecular property analysis. Future plans include expanded capabilities for predicting electronic and transport properties.
 
+---
 
+## Features
 
->**FEATURES**
+- **Automatic input generation** for VASP, Quantum ESPRESSO, Gaussian, GRRM, and other electronic structure codes
+- **Output analysis** supporting various formats (XML, YAML, JSON, etc.)
+- **Vibrational and thermodynamic analysis** of atomic and molecular systems
+- **Transition state search** using the CI-NEB method (currently interfaced with Quantum ESPRESSO)
+- **Zone-center phonon calculations** (based on gradient input; planned expansion to the full Brillouin zone)
+- **Model calculations** for lattice thermal conductivity (first-principles implementation is experimental)
+- **Tight-binding calculations** for bulk materials
+- **Point group detection** (space group and symmetry analysis powered by spglib)
+- **Lattice transformation analysis**
+- **Machine learning** predictions of key physical properties (more models coming soon)
+- **Unit conversion utilities** — seamless handling of atomic units, SI units, and file formats like AXSF, BXSF, and CUBE for visualization
+- **Force constant analysis** from Phonopy calculations (Γ-point or arbitrary q-points), including pair-wise interactions, distances, stretching, and bending constants
+- **Infrared and Raman intensity calculations** for periodic systems (auto-generates files for computing the high-frequency dielectric constant ε∞)
+- **Structure manipulation** — atomic substitution, deletion, extension, modulation, inversion, and more
+- Additional routines (xTB-GRRM interfacing, minimization procedures, Fortran modules for static dielectric constant and mode oscillator strengths, etc.) are available and will be integrated into the main package soon
 
-- Automatic `input generations` for different electronic structure softwares
--    Output analysis of `different file formats` such xml, yaml, json, and so on
--    `Vibrational and thermodynamical analysis` of atomic and molecular systems
--    `Transition state` finding using CI-NEB approach (interfaced with quantum-espresso for the time being!!)
--    `Zone centre phonon` calculations based on gradient input as implemented in phonon directory (to be expanded to whole zone)
--    Model calculations of `lattice thermal conductivity` (first principles calculation is experimental)
--    Tight binding calculation of bulk materials
--    `Point group` detection (space group detection and other stuff carried out using spglib)
--    `Lattice transformation` analysis   
--    `Machine learning` prediction of *important* physical property (more to add soon!!)
--    Easy to use `unit conversion`  routine; axsf, bxsf, cube files .. for visualizations etc
--    Reading `force constants` from phonopy calculations at gamma or any other q-point and finding the force-constants (:math:`\phi_{i,j}`) between all pair of atoms or specific atom pairs along with respective distances; further exploration of stretching and bending force constants (:math:`\phi_{stretch}` and :math:`\phi_{bend}`)
--    `Infra-red and Raman-intensity` calculations for periodic systems (automatically generates the needed files to compute the :math:`\epsilon_{\infty}`)
--    `Manipulation` of atomic and crystal structures such as atomic substitution, deletion, extension, modulation, and inversion, etc.
--    More routines (interfacing of xTB with grrm, minimization procedures, fortran code for calculating static dielectric constant, mode oscillator strength etc..)  are there, but to be added to esta package!
-    
+---
 
 <div class="grid cards" markdown>
 
--   :material-clock-fast:{ .lg .middle } __Set up EStA__
+-   :material-clock-fast:{ .lg .middle } **Set up EStA**
 
     ---
 
-    Install [`EStA`](#) with and get up and running in minutes
+    Install EStA and get up and running in minutes.
 
-    [:octicons-arrow-right-24: Getting started](explanation.md)
+    [:octicons-arrow-right-24: Getting Started](explanation.md)
 
-
--   :material-material-design:{ .lg .middle } __Xlat and Xat Classes__
+-   :material-material-design:{ .lg .middle } **Xlat and Xat Classes**
 
     ---
 
-    Xlat and Xat to handle the crystal lattice and atom/molecules
+    Core classes for handling crystal lattices (`Xlat`) and atoms/molecules (`Xat`).
 
     [:octicons-arrow-right-24: Usage](tutorials.md)
 
-
-
-<!-- -  :material-material-design:{ .lg .middle} __HSONU__
+-   :writing_hand:{ .lg .middle } **Measure Module: Units Handling**
 
     ---
 
-    hello sk kkumar
+    Comprehensive and easy-to-use unit conversion routines (atomic ↔ SI units and more).
 
-    [:octicons-arrow-right-24: Customization](#) -->
+    [:octicons-arrow-right-24: Documentation](tutorials.md)
 
-
--   :writing_hand:{ .lg .middle } __Measure Module: Units handling__
-
-    ---
-
-    Easy units conversions. Atomic units to SI conversion and vice-versa
-
-    [:octicons-arrow-right-24: To-add](tutorials.md)
-
-
-
-
-
--   :material-scale-balance:{ .lg .middle } __General and QE handing module__
+-   :material-scale-balance:{ .lg .middle } **General & Quantum ESPRESSO Modules**
 
     ---
 
-    Lattice and atoms tweaking by `General Module` class  + generation of `QE` inputs
+    Structure manipulation via the `General` module + convenient input generation for Quantum ESPRESSO.
 
-    <!-- [:octicons-arrow-right-24: License](#) -->
     [:octicons-arrow-right-24: Usage](tutorials.md)
 
 </div>
 
+## Documentation Structure
 
+The documentation is organized into four main sections:
 
+1. **[Explanation](explanation.md)** — High-level overview and background
+2. **[How-To Guides](how-to-guides.md)** — Practical step-by-step instructions
+3. **[Tutorials](tutorials.md)** — Hands-on examples and walkthroughs
+4. **[Reference](reference.md)** — API documentation and detailed module references
 
-## Table Of Contents
-
-The documentation consists of `four` parts
-
-1. [Explanation](explanation.md)
-2. [How-To Guides](how-to-guides.md)
-3. [Tutorials](tutorials.md)
-4. [Reference](reference.md)
+---
 
 ## Acknowledgements
 
-Thank you to all those who have supported, discussed, and interacted with me throughout my academic career. Special thanks to *Dr. Savita Saini* for 
-the motivation to start and supporting at every phase of the project, her support for the family when I was busy working in the weekends is beyond words. 
+Thank you to everyone who has supported, discussed, and contributed to the project throughout its development. Special thanks to **Dr. Savita Saini** for her continuous motivation, guidance at every stage, and incredible family support during weekends and intensive development periods.
 
+---
 
-
-
+*EStA is under active development. Contributions, bug reports, and feature requests are welcome.*

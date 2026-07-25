@@ -13,20 +13,17 @@ This part of the project documentation focuses on **examples** usage of `EStA`.
 - Provide the minimum necessary explanation
 - Avoid any distractions -->
 
-
-
 <!-- __Let us try out some of the capabilities of the EStA program with some examples below__ -->
 
+---
 
-
-
---- 
 ## General related
-- Read `xyz` file data. 
+
+- Read `xyz` file data.
 
 !!! example
 
-``` py
+```py
 
 #import esta.general.aadhaar as aadh  [this also works]
 #aad = aadh.Aadhaar()
@@ -34,7 +31,6 @@ This part of the project documentation focuses on **examples** usage of `EStA`.
 from esta import Xat # import Xat class
 Xat.read_xyz(filename='x.xyz')
 ```
-
 
 - Substitution of atoms by other atom or gp of atoms.
 
@@ -61,13 +57,11 @@ substitute.substitute_atom_by_atoms(atomid=atomid, atom_id_subs=atom_id_subs,\
 xyzfile=xyzfile, xyz_subs_file=xyz_subs_file)
 ```
 
-
-
 - Read `poscar` file data.
 
 !!! example
-  
-``` py
+
+```py
 
 import esta.vaspBag.inout.crystal_lattice as clatt
 xlatt = clatt.Crystal_Lattice("POSCAR", ''./)
@@ -113,12 +107,11 @@ xlatt.get_natm_type
 
 ```
 
-
 - Rename_files_using_index_for_ANY (collection of xyz or poscar files).
 
 !!! example
 
-``` py
+```py
  
 import glob
 import esta.general.rename_general as rename
@@ -141,16 +134,13 @@ for ifile in files:
     rename.to_file_any(ifile, str_indx, first_indx_only=first_index, file_extension='xyz') #POSCAR' ) 
 ```
 
-
-
-
 ## VASP related
 
 - Create input file for the vasp calculations.
 
 !!! example
 
-``` py
+```py
 
 import esta.vaspBag.vaspin as vaspin
 vaspobj = vaspin.vasp()
@@ -158,14 +148,105 @@ vaspobj.get_vasp_input(poscar_name='POSCAR')
 
 ```
 
+---
+
+- Create supercell from the input POSCAR
+
+!!! example
+
+```
+from esta.general import operation as op
+from esta import Xlat
+
+poscar_files = glob.glob('*POSCAR')
+for poscar_file in poscar_files:
+    pos_obj = Xlat(poscar_file)
+    obj = op.Transform(pos_obj)
+    obj.get_supercell_([1,1,2])  # 1x1x2 Supercell creation 
+    print('get sposcar:')
+    obj.get_sposcar_('S_'+str(poscar_file))
+```
 
 ---
+
+- Create POSCAR with selective tags
+
+!!! example
+
+```import
+import numpy as np
+import glob
+import esta.vaspBag.inout.crystal_lattice as clatt
+import esta.general.aadhaar as aad
+aad_obj = aad.Aadhaar()
+
+filename= 'Ir111.vasp'
+fix_atoms_list = ['1-8'] #,'30','8','29']
+fix_direction = 'xyz' # 'z' # 'xy'
+
+files = glob.glob(filename)
+for posfile in files:
+    xlatt = clatt.CrystalLattice(posfile)
+    xlatt.read_poscar()
+    pos=xlatt.tau_cartesian
+    symb, _, _ = xlatt.get_all_atoms_labels()
+    natom = xlatt.natoms
+    lv1 = xlatt.LV1
+    lv2 = xlatt.LV2
+    lv3 = xlatt.LV3
+
+    fle ="_".join( i for i in posfile.split("_")[0:-1]  ) + str('POSCAR')
+    xlatt.get_selectivePOSCAR_adv(ldisp=True, disp_atoms_num=fix_atoms_list,\
+                                  fix_direction=fix_direction, outfile='fix_'+str(fle))
+
+```
+
+---
+
+- Get forces, and poscar from the vasp xml
+
+!!! example
+
+
+```
+import esta
+from esta.vaspBag.inout import crystal_lattice as clatt
+from esta.general import aadhaar 
+from  esta.vaspBag.inout import xml_vasp_adv
+import numpy as np
+
+aad = aadhaar.Aadhaar()
+print ("")
+print ('***********************************************')
+print ("reading forces from vasprun.xml file ...")
+
+out_xmla = xml_vasp_adv.read_vasp_xml('vasprun.xml')
+celll = out_xmla[0]
+position_scaled = out_xmla[1]
+symbol= out_xmla[2]
+forces = out_xmla[-1]
+print("forces are: ")
+
+
+forc = []
+for j in range(np.shape(forces)[0]):
+     print(("{0:9.6f} {1:9.6f} {2:9.6f} {3:6.4f}".format( forces[j][0],\
+	    forces[j][1], forces[j][2], np.linalg.norm(forces[j]))))
+     forc.append(np.linalg.norm(forces[j]))
+
+print("Lattice vectors/Cell:")
+print(celll)
+print("positions in scaled coordinates:")
+print(position_scaled)   
+aad.get_poscar(out_xmla[0], out_xmla[1], out_xmla[2], 'vaspxml')
+
+```
 
 - Read POSCARs for reactants and products in a reaction and generate intermediate structures.
 
 !!! example
 
-``` py
+```py
 
 import numpy as np
 from  esta.vaspBag.inout.crystal_lattice import CrystalLattice
@@ -188,15 +269,6 @@ get_configs.get_poscar_images(N, poscar_obj, poscar_obj2)
 
 ---
 
-
-
-
-
-
-
-
-
-
 <!-- - read `csv` file contents.
 ``` py
 
@@ -218,13 +290,13 @@ with open(csvfile) as csvfile:
 ``` 
 -->
 
-
 ## Quanutm-Espresso related
+
 - Create qe input file for QE calculations with option 1*
 
 !!! example
 
-``` py
+```py
 
 import glob
 import esta.qeBag.gen_qeinput_advv as gen_qeinput
@@ -237,14 +309,11 @@ for ifile in posfiles:
     cal_type='vc-relax', lcopy_pseudo=True, l_pseudo_GVRB=True)
 ```
 
-
-
-
 - Generate displacements from atomic positions in the poscar for vibrational calculations.
 
 !!! example
 
-``` py
+```py
 import numpy as np
 import esta
 import esta.phonon.atm_displacements_selective_general_disp  as atmdisp
@@ -256,13 +325,36 @@ delta_x = 0.02 # ang
 atmdisp.gen_disp(posfile, qe_part_file, delta_x)
 ```
 
+---
+
+- Get the electronic band gap from qe xml file
+
+!!! example
+
+```
+import numpy as np
+import glob
+from esta import cf
+import esta.qeBag.band_gap_xml as band_gap
+
+xmls=glob.glob("*.xml")
+for xmlfile in xmls: 
+    egap, vbmdict, cbmdict = band_gap.eband_gap(xmlfile)
+    #print ("bandgap : {} eV".format(egap))
+    ##print ("bandgap : {} eV".format(egap*cf.har2ev))
+    #print("vbM dict: {} ".format(vbmdict))
+    #print("cbm dict: {} ".format(cbmdict))
+
+
+```
 
 ## ORCA related files
+
 - Create ORCA input files for atomic relaxation from many xyz files: opt calculations
 
 !!! example
 
-  ```py
+```py
 
 
   import glob
@@ -303,12 +395,7 @@ atmdisp.gen_disp(posfile, qe_part_file, delta_x)
       orca_obj = iorca.GenerateInp(ii, charge, multiplicity, cal_type)
       orca_obj.write_inp(functional=functional,basis=basis,dispersion=dispersion,\
               nproc=nproc, memory=memory, solvent=None, extra_tags=extra_tags)
-  ```
-
-
-
-
-
+```
 
 <!-- !!! orca_input
 
@@ -355,10 +442,6 @@ atmdisp.gen_disp(posfile, qe_part_file, delta_x)
             orca_obj.write_inp(functional=functional,basis=basis,dispersion=dispersion,\
                     nproc=nproc, memory=memory, solvent=None, extra_tags=extra_tags)
         ``` -->
-
-
-
-
 
 <!-- 
         ``` markdown

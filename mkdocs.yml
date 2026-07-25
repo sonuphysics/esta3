@@ -112,11 +112,12 @@ plugins:
             show_signature_annotations: true          
   - api-autonav:
       modules: ['../esta-3.1.0/esta']
-      #modules: ['../vaspBag', '../esta-2.9.5/esta']
 
 
 
 
+extra_css:
+  - stylesheets/extra.css
 
 
 # Hooks

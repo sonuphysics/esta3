@@ -1,0 +1,390 @@
+This part of the project documentation focuses on **examples** usage of `EStA`.
+
+<!-- > **Note:** Expand this section by considering the
+> following points:
+
+- Help newcomers with getting started
+- Teach readers about your library by making them
+    write code
+- Inspire confidence through examples that work for
+    everyone, repeatably
+- Give readers an immediate sense of achievement
+- Show concrete examples, no abstractions
+- Provide the minimum necessary explanation
+- Avoid any distractions -->
+
+
+
+<!-- __Let us try out some of the capabilities of the EStA program with some examples below__ -->
+
+
+---
+
+# Tutorials
+
+This section demonstrates the most common workflows in **EStA** through practical, reproducible Python examples. Rather than documenting every API individually, these tutorials illustrate how to perform common tasks encountered in atomistic simulations, computational chemistry, and materials science.
+
+Each example is self-contained and can be adapted to your own structures and calculations.
+
+---
+
+# General utilities
+
+## Read an XYZ structure
+
+Read atomic coordinates from an `.xyz` file into an `Xat` object. Once loaded, the structure can be inspected, modified, or passed to other EStA utilities for further processing.
+
+!!! example
+
+```py
+from esta import Xat
+
+# Read atomic coordinates from an XYZ file
+Xat.read_xyz(filename='x.xyz')
+```
+
+---
+
+## Substitute an atom with another atom or molecular fragment
+
+Replace a selected atom in an existing structure with another atom or an entire molecular fragment (substituent). This utility is useful for generating functionalized molecules, defect structures, or systematically exploring chemical substitutions.
+
+The substituent is supplied as a separate `.xyz` file. By convention, the first atom in the substituent file is treated as the attachment atom that replaces the selected atom in the original structure.
+
+!!! example
+
+```py
+import glob
+import esta.general.substitute_atom as substitute
+
+# Atom to be replaced
+atomid = 10
+
+# Input structure
+xyzfile = 'path_0000.xyz'
+
+# Substituent structure
+xyz_subs_file = 'methyl.xyz'
+
+# First atom of the substituent is used as the attachment atom
+atom_id_subs = 1
+
+print(f'Processing structure: {xyzfile}')
+
+substitute.substitute_atom_by_atoms(
+    atomid=atomid,
+    atom_id_subs=atom_id_subs,
+    xyzfile=xyzfile,
+    xyz_subs_file=xyz_subs_file
+)
+```
+
+---
+
+## Read a POSCAR file
+
+Load a VASP `POSCAR` file and access structural information such as lattice vectors, unit-cell volume, atomic positions, atomic species, and coordinate representations.
+
+After reading the structure, the `CrystalLattice` object provides convenient methods for converting between Cartesian and fractional coordinates, accessing lattice parameters, and retrieving other crystallographic properties.
+
+!!! example
+
+```py
+import esta.vaspBag.inout.crystal_lattice as clatt
+
+# Create a CrystalLattice object
+xlatt = clatt.Crystal_Lattice("POSCAR", "./")
+
+# Read the POSCAR file
+xlatt.read_poscar()
+
+# Cartesian coordinates
+print(xlatt.tau_cartesian)
+
+# Fractional coordinates
+print(xlatt.tau_direct)
+
+# Cell matrix
+print(xlatt.get_cell_matrix)
+
+# Lattice vectors
+print(xlatt.get_cell_vectors)
+
+# Unit-cell volume
+print(xlatt.real_volume)
+
+# Atom types
+print(xlatt.get_each_atm_type)
+
+# Number of atoms of each type
+print(xlatt.get_natm_type)
+```
+
+This example demonstrates how to retrieve:
+
+* Cartesian atomic coordinates
+* Fractional (crystal) coordinates
+* Cell matrix and lattice vectors
+* Unit-cell volume
+* Atomic species information
+* Number of atoms of each species
+
+The `CrystalLattice` object provides many additional methods for coordinate conversion, lattice analysis, reciprocal lattice generation, and structural manipulation.
+
+---
+
+## Rename collections of structure files
+
+Rename multiple structure files (such as `XYZ` or `POSCAR` files) using flexible filename patterns.
+
+This utility is especially useful when organizing large datasets generated from geometry optimizations, molecular dynamics simulations, or high-throughput calculations.
+
+Different portions of the original filename can be retained or removed automatically before creating the new filenames.
+
+!!! example
+
+```py
+import glob
+import esta.general.rename_general as rename
+
+# Find all XYZ files
+files = glob.glob("rlx*.xyz")
+
+# Keep all parts except the last one
+first_index = False
+str_indx = [0, -2]
+
+for ifile in files:
+
+    print(f'Renaming: {ifile}')
+
+    rename.to_file_any(
+        ifile,
+        str_indx,
+        first_indx_only=first_index,
+        file_extension='xyz'
+    )
+```
+
+---
+
+# VASP utilities
+
+## Generate VASP input files
+
+Automatically generate the standard VASP input files required for a calculation from a `POSCAR` structure.
+
+This utility simplifies the preparation of new calculations by generating the required input files using sensible defaults.
+
+!!! example
+
+```py
+import esta.vaspBag.vaspin as vaspin
+
+# Create a VASP object
+vaspobj = vaspin.vasp()
+
+# Generate VASP input files
+vaspobj.get_vasp_input(poscar_name='POSCAR')
+```
+
+---
+
+## Generate intermediate structures between reactant and product
+
+Create a sequence of intermediate atomic configurations between two endpoint structures.
+
+This functionality is useful for preparing initial pathways for reaction studies, transition-state searches, nudged elastic band (NEB) calculations, or visualizing structural transformations.
+
+The example reads two POSCAR structures and generates a specified number of interpolated images between them.
+
+!!! example
+
+```py
+import numpy as np
+from esta.vaspBag.inout.crystal_lattice import CrystalLattice
+import esta.general.get_configs as get_configs
+
+# Read the initial structure
+initial = CrystalLattice(filename='ach3oh_00_POSCAR', location="./")
+initial.get_poscar()
+
+# Read the final structure
+final = CrystalLattice(filename='cxyz_POSCAR', location="./")
+final.get_poscar()
+
+# Number of intermediate structures
+N = 9
+
+# Generate interpolated atomic positions
+configurations = get_configs.get_atomic_configurations(
+    N,
+    initial.tau_cartesian,
+    final.tau_cartesian
+)
+
+print(configurations[1])
+
+# Write interpolated POSCAR files
+get_configs.get_poscar_images(N, initial, final)
+```
+
+---
+
+# Quantum ESPRESSO utilities
+
+## Generate Quantum ESPRESSO input files
+
+Generate Quantum ESPRESSO input files directly from VASP `POSCAR` structures.
+
+The utility automatically prepares the input file, selects the requested pseudopotentials, and optionally copies the pseudopotential files into the working directory.
+
+Calculation type, lattice representation, and pseudopotential family can all be customized.
+
+!!! example
+
+```py
+import glob
+import esta.qeBag.gen_qeinput_advv as gen_qeinput
+
+# Pseudopotential family
+ps_info = ('pbesol', '_v1.*')
+
+# Read all POSCAR files
+posfiles = glob.glob('*POSCAR')
+
+for ifile in posfiles:
+
+    gen_qeinput.get_qe_input(
+        ifile,
+        ps_info,
+        lprint_cell='angstrom',
+        cal_type='vc-relax',
+        lcopy_pseudo=True,
+        l_pseudo_GVRB=True
+    )
+```
+
+---
+
+## Generate displaced structures for vibrational calculations
+
+Generate displaced atomic structures required for finite-displacement phonon or vibrational calculations.
+
+Each selected atom is displaced by a specified distance, producing a series of structures that can subsequently be used for force calculations.
+
+!!! example
+
+```py
+import esta.phonon.atm_displacements_selective_general_disp as atmdisp
+
+print('Generating displaced structures...')
+
+# Additional Quantum ESPRESSO input fragment
+qe_part_file = 'qe_part'
+
+# Input POSCAR structure
+posfile = 'fix_3_init_bi_POSCAR'
+
+# Atomic displacement (Å)
+delta_x = 0.02
+
+# Generate displaced structures
+atmdisp.gen_disp(posfile, qe_part_file, delta_x)
+```
+
+---
+
+# ORCA utilities
+
+## Generate ORCA input files for geometry optimization
+
+Automatically generate ORCA input files for a collection of molecular structures stored as `.xyz` files.
+
+The example demonstrates how to specify commonly used calculation parameters, including:
+
+* exchange-correlation functional,
+* basis set,
+* dispersion correction,
+* memory allocation,
+* number of processors,
+* molecular charge,
+* spin multiplicity, and
+* additional ORCA keywords.
+
+This utility is particularly useful when preparing large batches of quantum chemistry calculations with consistent computational settings.
+
+!!! example
+
+```py
+import glob
+import esta.orcaBag.input_orca as iorca
+
+# Calculation type
+cal_type = 'OPT'
+
+# Computational resources
+nproc = '10'
+memory = '1000'
+
+# Electronic structure method
+functional = "BP86"
+basis = " def2-SVP def2/J RIJCOSX "
+
+# Dispersion correction
+dispersion = 'D3Zero'
+
+# Optional solvent model
+solvent = None
+
+# Additional ORCA keywords
+extra_tags = {'tag3': 'NoUseSym'}
+
+# Molecular charge and spin multiplicity
+charge = 2
+multiplicity = 2
+
+# Read all XYZ structures
+xyz_file_list = glob.glob("*.xyz")
+
+print('XYZ files found:', xyz_file_list)
+
+for xyz_file in xyz_file_list:
+
+    print('-' * 40)
+    print(f'Generating input for {xyz_file}')
+
+    orca_obj = iorca.GenerateInp(
+        xyz_file,
+        charge,
+        multiplicity,
+        cal_type
+    )
+
+    orca_obj.write_inp(
+        functional=functional,
+        basis=basis,
+        dispersion=dispersion,
+        nproc=nproc,
+        memory=memory,
+        solvent=solvent,
+        extra_tags=extra_tags
+    )
+```
+
+---
+
+# Summary
+
+These tutorials demonstrate several of the most frequently used capabilities of **EStA**, including:
+
+* reading and manipulating molecular structures,
+* working with VASP `POSCAR` files,
+* generating simulation input files,
+* creating reaction pathways,
+* generating displaced structures for vibrational calculations,
+* performing atomic substitutions, and
+* preparing ORCA input files for quantum chemistry calculations.
+
+Most examples require only minor modifications to filenames and calculation parameters, making them convenient starting points for developing your own atomistic simulation workflows.
+

@@ -1,0 +1,25 @@
+.md-grid {
+    max-width: 90%; /*1440px; /* Change to 100% to stretch to the entire screen width */
+  }
+
+  /* Rounded corners and subtle shadow for code containers */
+.md-typeset pre {
+    border-radius: 8px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  }
+  
+  /* Custom styling for the code block titles */
+  .md-code__title {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    font-family: monospace;
+    font-weight: bold;
+    background-color: #1e1e1e !important; /* Darker title banner */
+  }
+  
+  /* Smooth horizontal scrollbar styling for long lines of code */
+  .md-typeset pre code {
+    scrollbar-width: thin;
+    scrollbar-color: #8a85e8 transparent;
+  }
+  
