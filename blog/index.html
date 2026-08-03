@@ -22,7 +22,7 @@
     
     
       
-        <title>Machine learning - EStA 3</title>
+        <title>Blog - EStA 3</title>
       
     
     
@@ -88,7 +88,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#machine-learning" class="md-skip">
+        <a href="#blog" class="md-skip">
           Skip to content
         </a>
       
@@ -127,7 +127,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Machine learning
+              Blog
             
           </span>
         </div>
@@ -628,6 +628,8 @@
       
         
       
+        
+      
     
     
       
@@ -696,6 +698,28 @@
   
   <span class="md-ellipsis">
     ML Descriptors
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="equivariant_graph_transformer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Transformer
     
   </span>
   
@@ -12647,606 +12671,7 @@
   <div class="md-content" data-md-component="content">
     <div class="md-content__inner">
       <header class="md-typeset">
-        <h1 id="machine-learning">Machine learning<a class="headerlink" href="#machine-learning" title="Permanent link">&para;</a></h1>
-<p>Machine learning is the process of learning a function from data instead of programming every rule explicitly.</p>
-<p>Given a dataset</p>
-<div class="arithmatex">\[
-D=\{(x_i,y_i)\}_{i=1}^{N},
-\]</div>
-<p>where</p>
-<ul>
-<li><span class="arithmatex">\(x_i\)</span> = input (features)</li>
-<li><span class="arithmatex">\(y_i\)</span> = output (label or target)</li>
-</ul>
-<p>the goal is to learn a function</p>
-<div class="arithmatex">\[
-f_\theta(x) \approx y,
-\]</div>
-<p>where <span class="arithmatex">\(\theta\)</span> represents the model parameters learned from the data.</p>
-<p>For a new input <span class="arithmatex">\(x_{\text{new}}\)</span>, the prediction is</p>
-<div class="arithmatex">\[
-\hat{y}=f_\theta(x_{\text{new}}).
-\]</div>
-<hr />
-<h1 id="types-of-machine-learning">Types of Machine Learning<a class="headerlink" href="#types-of-machine-learning" title="Permanent link">&para;</a></h1>
-<h2 id="1-supervised-learning">1. Supervised Learning<a class="headerlink" href="#1-supervised-learning" title="Permanent link">&para;</a></h2>
-<p>The training data contains both inputs and correct outputs.</p>
-<p>Training dataset:</p>
-<div class="arithmatex">\[
-D=\{(x_i,y_i)\}_{i=1}^{N}.
-\]</div>
-<p>The objective is to find model parameters that minimize prediction error.</p>
-<p>A common objective is</p>
-<div class="arithmatex">\[
-\theta^*=\arg\min_{\theta}
-\sum_{i=1}^{N}
-L\!\left(y_i,f_\theta(x_i)\right),
-\]</div>
-<p>where</p>
-<ul>
-<li><span class="arithmatex">\(L(\cdot)\)</span> is the loss function.</li>
-<li><span class="arithmatex">\(\theta^*\)</span> is the optimal parameter set.</li>
-</ul>
-<hr />
-<h2 id="2-unsupervised-learning">2. Unsupervised Learning<a class="headerlink" href="#2-unsupervised-learning" title="Permanent link">&para;</a></h2>
-<p>Only inputs are available.</p>
-<p>Dataset:</p>
-<div class="arithmatex">\[
-D=\{x_i\}_{i=1}^{N}.
-\]</div>
-<p>The objective is to discover hidden structure in the data.</p>
-<p>Mathematically,</p>
-<div class="arithmatex">\[
-x_i \longrightarrow C_j,
-\]</div>
-<p>where <span class="arithmatex">\(C_j\)</span> represents the cluster assigned to sample <span class="arithmatex">\(x_i\)</span>.</p>
-<hr />
-<h2 id="3-reinforcement-learning">3. Reinforcement Learning<a class="headerlink" href="#3-reinforcement-learning" title="Permanent link">&para;</a></h2>
-<p>An agent interacts with an environment.</p>
-<p>At time <span class="arithmatex">\(t\)</span>,</p>
-<ul>
-<li>State: <span class="arithmatex">\(s_t\)</span></li>
-<li>Action: <span class="arithmatex">\(a_t\)</span></li>
-<li>Reward: <span class="arithmatex">\(r_t\)</span></li>
-</ul>
-<p>The objective is to maximize the expected cumulative reward</p>
-<div class="arithmatex">\[
-G_t=\sum_{k=0}^{\infty}\gamma^k r_{t+k+1},
-\]</div>
-<p>where</p>
-<ul>
-<li><span class="arithmatex">\(\gamma\in[0,1]\)</span> is the discount factor.</li>
-</ul>
-<hr />
-<h1 id="how-machine-learning-works">How Machine Learning Works<a class="headerlink" href="#how-machine-learning-works" title="Permanent link">&para;</a></h1>
-<h2 id="step-1-data-input">Step 1: Data Input<a class="headerlink" href="#step-1-data-input" title="Permanent link">&para;</a></h2>
-<p>Collect observations</p>
-<div class="arithmatex">\[
-X=
-\begin{bmatrix}
-x_1\\
-x_2\\
-\vdots\\
-x_N
-\end{bmatrix},
-\qquad
-Y=
-\begin{bmatrix}
-y_1\\
-y_2\\
-\vdots\\
-y_N
-\end{bmatrix}.
-\]</div>
-<p>Each sample contains several features</p>
-<div class="arithmatex">\[
-x_i=[x_{i1},x_{i2},\ldots,x_{id}]^T.
-\]</div>
-<hr />
-<h2 id="step-2-finding-patterns">Step 2: Finding Patterns<a class="headerlink" href="#step-2-finding-patterns" title="Permanent link">&para;</a></h2>
-<p>The learning algorithm estimates model parameters</p>
-<div class="arithmatex">\[
-\theta=f(D).
-\]</div>
-<p>The goal is</p>
-<div class="arithmatex">\[
-\text{Error} \rightarrow \min.
-\]</div>
-<p>For many models,</p>
-<div class="arithmatex">\[
-\hat{y}=f_\theta(x).
-\]</div>
-<hr />
-<h2 id="step-3-making-predictions">Step 3: Making Predictions<a class="headerlink" href="#step-3-making-predictions" title="Permanent link">&para;</a></h2>
-<p>For an unseen example</p>
-<div class="arithmatex">\[
-x_{\text{new}},
-\]</div>
-<p>the prediction is</p>
-<div class="arithmatex">\[
-\hat{y}=f_\theta(x_{\text{new}}).
-\]</div>
-<hr />
-<h1 id="common-machine-learning-algorithms">Common Machine Learning Algorithms<a class="headerlink" href="#common-machine-learning-algorithms" title="Permanent link">&para;</a></h1>
-<h2 id="1-linear-regression-supervised-learning">1. Linear Regression (Supervised Learning)<a class="headerlink" href="#1-linear-regression-supervised-learning" title="Permanent link">&para;</a></h2>
-<p>Linear regression models the relationship between input and output using a straight line.</p>
-<h3 id="model">Model<a class="headerlink" href="#model" title="Permanent link">&para;</a></h3>
-<p>For one feature,</p>
-<div class="arithmatex">\[
-\hat{y}=wx+b,
-\]</div>
-<p>where</p>
-<ul>
-<li><span class="arithmatex">\(w\)</span> = slope</li>
-<li><span class="arithmatex">\(b\)</span> = intercept</li>
-</ul>
-<p>For multiple features,</p>
-<div class="arithmatex">\[
-\hat{y}=w^Tx+b.
-\]</div>
-<p>The parameters are learned by minimizing the Mean Squared Error (MSE):</p>
-<div class="arithmatex">\[
-J(w,b)=\frac{1}{N}
-\sum_{i=1}^{N}
-(y_i-\hat{y}_i)^2.
-\]</div>
-<p>The optimization problem is</p>
-<div class="arithmatex">\[
-(w,b)=
-\arg\min J(w,b).
-\]</div>
-<p><strong>Example:</strong> Predicting house price from house size.</p>
-<hr />
-<h2 id="2-k-means-clustering-unsupervised-learning">2. K-Means Clustering (Unsupervised Learning)<a class="headerlink" href="#2-k-means-clustering-unsupervised-learning" title="Permanent link">&para;</a></h2>
-<p>K-Means partitions the data into <span class="arithmatex">\(K\)</span> clusters.</p>
-<p>Each cluster has a centroid</p>
-<div class="arithmatex">\[
-\mu_1,\mu_2,\ldots,\mu_K.
-\]</div>
-<p>Each point is assigned to its nearest centroid:</p>
-<div class="arithmatex">\[
-C_i=
-\arg\min_j
-\|x_i-\mu_j\|^2.
-\]</div>
-<p>The centroid is updated as</p>
-<div class="arithmatex">\[
-\mu_j=
-\frac{1}{|C_j|}
-\sum_{x_i\in C_j}
-x_i.
-\]</div>
-<p>The objective is to minimize the total within-cluster variance:</p>
-<div class="arithmatex">\[
-J=
-\sum_{j=1}^{K}
-\sum_{x_i\in C_j}
-\|x_i-\mu_j\|^2.
-\]</div>
-<p><strong>Example:</strong> Grouping clothes by color without predefined labels.</p>
-<hr />
-<h2 id="3-q-learning-reinforcement-learning">3. Q-Learning (Reinforcement Learning)<a class="headerlink" href="#3-q-learning-reinforcement-learning" title="Permanent link">&para;</a></h2>
-<p>Q-Learning estimates the value of taking action <span class="arithmatex">\(a\)</span> in state <span class="arithmatex">\(s\)</span>.</p>
-<p>The Q-value is</p>
-<div class="arithmatex">\[
-Q(s,a).
-\]</div>
-<p>The update rule is</p>
-<div class="arithmatex">\[
-Q(s,a)
-\leftarrow
-Q(s,a)
-+
-\alpha
-\left[
-r
-+
-\gamma
-\max_{a'}
-Q(s',a')
--
-Q(s,a)
-\right].
-\]</div>
-<p>where</p>
-<ul>
-<li><span class="arithmatex">\(\alpha\)</span> = learning rate</li>
-<li><span class="arithmatex">\(\gamma\)</span> = discount factor</li>
-<li><span class="arithmatex">\(r\)</span> = immediate reward</li>
-<li><span class="arithmatex">\(s'\)</span> = next state</li>
-</ul>
-<p>The agent chooses the action with the highest Q-value:</p>
-<div class="arithmatex">\[
-a^*
-=
-\arg\max_a
-Q(s,a).
-\]</div>
-<p><strong>Example:</strong> Teaching a pet a trick—correct actions receive rewards, increasing their Q-values, while incorrect actions receive little or no reward.</p>
-<hr />
-<h1 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h1>
-<table>
-<thead>
-<tr>
-<th>Concept</th>
-<th>Mathematical Expression</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Learning from data</td>
-<td><span class="arithmatex">\(f_\theta(x)\approx y\)</span></td>
-</tr>
-<tr>
-<td>Supervised learning</td>
-<td><span class="arithmatex">\(\theta^*=\arg\min_\theta \sum_i L(y_i,f_\theta(x_i))\)</span></td>
-</tr>
-<tr>
-<td>Unsupervised learning</td>
-<td><span class="arithmatex">\(x_i \rightarrow C_j\)</span></td>
-</tr>
-<tr>
-<td>Reinforcement learning</td>
-<td><span class="arithmatex">\(G_t=\sum_{k=0}^{\infty}\gamma^k r_{t+k+1}\)</span></td>
-</tr>
-<tr>
-<td>Linear regression</td>
-<td><span class="arithmatex">\(\hat{y}=wx+b\)</span></td>
-</tr>
-<tr>
-<td>Linear regression loss</td>
-<td><span class="arithmatex">\(J=\frac{1}{N}\sum (y-\hat{y})^2\)</span></td>
-</tr>
-<tr>
-<td>K-Means assignment</td>
-<td><span class="arithmatex">\(C_i=\arg\min_j\|x_i-\mu_j\|^2\)</span></td>
-</tr>
-<tr>
-<td>K-Means objective</td>
-<td><span class="arithmatex">\(\sum_{j=1}^{K}\sum_{x_i\in C_j}\|x_i-\mu_j\|^2\)</span></td>
-</tr>
-<tr>
-<td>Q-Learning update</td>
-<td><span class="arithmatex">\(Q\leftarrow Q+\alpha[r+\gamma\max Q(s',a')-Q]\)</span></td>
-</tr>
-<tr>
-<td>Prediction</td>
-<td><span class="arithmatex">\(\hat{y}=f_\theta(x_{\text{new}})\)</span></td>
-</tr>
-</tbody>
-</table>
-<p>These equations provide the mathematical foundation for the concepts described in the original text while keeping the connection between the intuition and the underlying ML algorithms clear.</p>
-<hr />
-<hr />
-<hr />
-<h1 id="deep-learning"><strong>Deep Learning</strong><a class="headerlink" href="#deep-learning" title="Permanent link">&para;</a></h1>
-<p>Deep learning is a branch of <strong>machine learning</strong> that uses <strong>artificial neural networks with multiple layers</strong> to automatically learn hierarchical representations from data. Unlike traditional machine learning, deep learning learns both the features and the mapping from input to output directly from the data.</p>
-<p>Deep learning has achieved state-of-the-art performance in:</p>
-<ul>
-<li>Image recognition</li>
-<li>Speech recognition</li>
-<li>Natural language processing (NLP)</li>
-<li>Scientific computing</li>
-<li>Drug discovery</li>
-<li>Materials science</li>
-</ul>
-<hr />
-<h1 id="1-mathematical-formulation">1. Mathematical Formulation<a class="headerlink" href="#1-mathematical-formulation" title="Permanent link">&para;</a></h1>
-<p>Suppose we have a dataset</p>
-<div class="arithmatex">\[
-D=\left\{(x_i,y_i)\right\}_{i=1}^{N},
-\]</div>
-<p>where</p>
-<ul>
-<li><span class="arithmatex">\(x_i\in\mathbb{R}^{d}\)</span> : input feature vector</li>
-<li><span class="arithmatex">\(y_i\)</span> : corresponding target/output</li>
-</ul>
-<p>The goal is to learn a function</p>
-<div class="arithmatex">\[
-f_\theta:\mathbb{R}^{d}\rightarrow\mathbb{R}^{k},
-\]</div>
-<p>such that</p>
-<div class="arithmatex">\[
-f_\theta(x)\approx y,
-\]</div>
-<p>where</p>
-<ul>
-<li><span class="arithmatex">\(\theta\)</span> represents the trainable parameters</li>
-<li><span class="arithmatex">\(d\)</span> is the input dimension</li>
-<li><span class="arithmatex">\(k\)</span> is the output dimension</li>
-</ul>
-<hr />
-<h1 id="2-a-single-neural-network-layer">2. A Single Neural Network Layer<a class="headerlink" href="#2-a-single-neural-network-layer" title="Permanent link">&para;</a></h1>
-<p>A fully-connected (dense) layer computes</p>
-<div class="arithmatex">\[
-z=W x+b,
-\]</div>
-<p>where</p>
-<ul>
-<li><span class="arithmatex">\(W\)</span> = weight matrix</li>
-<li><span class="arithmatex">\(b\)</span> = bias vector</li>
-<li><span class="arithmatex">\(z\)</span> = linear output</li>
-</ul>
-<p>A nonlinear activation function is then applied</p>
-<div class="arithmatex">\[
-a=\sigma(z),
-\]</div>
-<p>where</p>
-<div class="arithmatex">\[
-\sigma(\cdot)
-\]</div>
-<p>may be</p>
-<ul>
-<li>ReLU</li>
-<li>Sigmoid</li>
-<li>tanh</li>
-<li>GELU</li>
-<li>Softplus</li>
-</ul>
-<hr />
-<h1 id="3-deep-neural-network">3. Deep Neural Network<a class="headerlink" href="#3-deep-neural-network" title="Permanent link">&para;</a></h1>
-<p>A deep neural network stacks several layers together.</p>
-<div class="arithmatex">\[
-a^{(0)}=x
-\]</div>
-<p>For layer <span class="arithmatex">\(l\)</span></p>
-<div class="arithmatex">\[
-z^{(l)}=W^{(l)}a^{(l-1)}+b^{(l)}
-\]</div>
-<div class="arithmatex">\[
-a^{(l)}=\sigma\left(z^{(l)}\right)
-\]</div>
-<p>Finally,</p>
-<div class="arithmatex">\[
-\hat y=a^{(L)}
-\]</div>
-<p>where</p>
-<ul>
-<li><span class="arithmatex">\(L\)</span> = total number of layers</li>
-</ul>
-<h1 id="network-architecture">Network Architecture<a class="headerlink" href="#network-architecture" title="Permanent link">&para;</a></h1>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Input
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>  │
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>  ▼
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>┌─────────────┐
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>│ Hidden Layer│
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>└─────────────┘
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>        │
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>        ▼
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>┌─────────────┐
-</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>│ Hidden Layer│
-</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>└─────────────┘
-</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>        │
-</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>        ▼
-</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>┌─────────────┐
-</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>│ Hidden Layer│
-</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>└─────────────┘
-</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>        │
-</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>        ▼
-</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>     Output
-</span></code></pre></div>
-<hr />
-<h1 id="4-activation-functions">4. Activation Functions<a class="headerlink" href="#4-activation-functions" title="Permanent link">&para;</a></h1>
-<h2 id="relu">ReLU<a class="headerlink" href="#relu" title="Permanent link">&para;</a></h2>
-<div class="arithmatex">\[
-\mathrm{ReLU}(x)=\max(0,x)
-\]</div>
-<p>Advantages</p>
-<ul>
-<li>Very fast</li>
-<li>Avoids vanishing gradients</li>
-<li>Most commonly used</li>
-</ul>
-<hr />
-<h2 id="sigmoid">Sigmoid<a class="headerlink" href="#sigmoid" title="Permanent link">&para;</a></h2>
-<div class="arithmatex">\[
-\sigma(x)=\frac{1}{1+e^{-x}}
-\]</div>
-<p>Output range</p>
-<div class="arithmatex">\[
-0&lt;\sigma(x)&lt;1
-\]</div>
-<p>Often used for binary classification.</p>
-<hr />
-<h2 id="tanh">tanh<a class="headerlink" href="#tanh" title="Permanent link">&para;</a></h2>
-<div class="arithmatex">\[
-\tanh(x)=\frac{e^x-e^{-x}}{e^x+e^{-x}}
-\]</div>
-<p>Output range</p>
-<div class="arithmatex">\[
--1&lt;\tanh(x)&lt;1
-\]</div>
-<p>Zero-centered activation.</p>
-<hr />
-<h1 id="5-loss-function">5. Loss Function<a class="headerlink" href="#5-loss-function" title="Permanent link">&para;</a></h1>
-<p>For regression problems we commonly use the Mean Squared Error (MSE)</p>
-<div class="arithmatex">\[
-L=\frac1N\sum_{i=1}^{N}\left(\hat y_i-y_i\right)^2
-\]</div>
-<p>where</p>
-<ul>
-<li><span class="arithmatex">\(\hat y_i\)</span> = prediction</li>
-<li><span class="arithmatex">\(y_i\)</span> = target</li>
-</ul>
-<hr />
-<h1 id="6-learning-the-parameters">6. Learning the Parameters<a class="headerlink" href="#6-learning-the-parameters" title="Permanent link">&para;</a></h1>
-<p>Training aims to minimize the loss</p>
-<div class="arithmatex">\[
-\theta^*=\arg\min_{\theta}L(\theta)
-\]</div>
-<p>The gradient of the loss is computed using <strong>backpropagation</strong></p>
-<div class="arithmatex">\[
-\frac{\partial L}{\partial\theta}
-\]</div>
-<p>Parameters are updated using Gradient Descent</p>
-<div class="arithmatex">\[
-\theta\leftarrow
-\theta-\eta\nabla_\theta L
-\]</div>
-<p>where</p>
-<ul>
-<li><span class="arithmatex">\(\eta\)</span> is the learning rate.</li>
-</ul>
-<hr />
-<h1 id="backpropagation-diagram">Backpropagation Diagram<a class="headerlink" href="#backpropagation-diagram" title="Permanent link">&para;</a></h1>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Forward Pass
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>Input
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>  │
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>  ▼
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>Layer 1
-</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>  │
-</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>  ▼
-</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>Layer 2
-</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>  │
-</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>  ▼
-</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>Prediction
-</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>  │
-</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>  ▼
-</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>Loss
-</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>
-</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>Backward Pass
-</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>
-</span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>Loss
-</span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a> ▲
-</span><span id="__span-1-21"><a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a> │
-</span><span id="__span-1-22"><a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a>Layer 2
-</span><span id="__span-1-23"><a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a> ▲
-</span><span id="__span-1-24"><a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a> │
-</span><span id="__span-1-25"><a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a>Layer 1
-</span><span id="__span-1-26"><a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a> ▲
-</span><span id="__span-1-27"><a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a> │
-</span><span id="__span-1-28"><a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a>Input
-</span></code></pre></div>
-<hr />
-<h1 id="7-why-deep-learning-works">7. Why Deep Learning Works<a class="headerlink" href="#7-why-deep-learning-works" title="Permanent link">&para;</a></h1>
-<p>Deep networks learn increasingly abstract features.</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>Input Image
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>      │
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>Edges
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
-</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>      │
-</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>
-</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>Corners
-</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>
-</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>      │
-</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>
-</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>Textures
-</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>
-</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>      │
-</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>
-</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>Object Parts
-</span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a>
-</span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a>      │
-</span><span id="__span-2-20"><a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a>
-</span><span id="__span-2-21"><a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a>Complete Object
-</span></code></pre></div>
-<p>Examples</p>
-<ul>
-<li>Edge detection</li>
-<li>Texture learning</li>
-<li>Shape recognition</li>
-<li>Object identification</li>
-</ul>
-<hr />
-<h1 id="8-pytorch-example">8. PyTorch Example<a class="headerlink" href="#8-pytorch-example" title="Permanent link">&para;</a></h1>
-<p>The following example learns the function</p>
-<div class="arithmatex">\[
-y=\sin(x)
-\]</div>
-<p>using a simple feedforward neural network.</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kn">import</span> <span class="nn">torch</span>
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="kn">import</span> <span class="nn">torch.nn</span> <span class="k">as</span> <span class="nn">nn</span>
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="kn">import</span> <span class="nn">torch.optim</span> <span class="k">as</span> <span class="nn">optim</span>
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>
-</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="n">torch</span><span class="o">.</span><span class="n">manual_seed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>
-</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="c1"># Generate data</span>
-</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="n">N</span> <span class="o">=</span> <span class="mi">200</span>
-</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>
-</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="n">x</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mf">3.14</span><span class="p">,</span> <span class="mf">3.14</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
-</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="n">y</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>
-</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="c1"># Define model</span>
-</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="n">model</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sequential</span><span class="p">(</span>
-</span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>    <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">64</span><span class="p">),</span>
-</span><span id="__span-3-17"><a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>    <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">(),</span>
-</span><span id="__span-3-18"><a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>    <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">64</span><span class="p">,</span><span class="mi">64</span><span class="p">),</span>
-</span><span id="__span-3-19"><a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>    <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">(),</span>
-</span><span id="__span-3-20"><a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a>    <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">64</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
-</span><span id="__span-3-21"><a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a><span class="p">)</span>
-</span><span id="__span-3-22"><a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a>
-</span><span id="__span-3-23"><a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a><span class="n">criterion</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">MSELoss</span><span class="p">()</span>
-</span><span id="__span-3-24"><a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a><span class="n">optimizer</span> <span class="o">=</span> <span class="n">optim</span><span class="o">.</span><span class="n">Adam</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span> <span class="n">lr</span><span class="o">=</span><span class="mf">1e-3</span><span class="p">)</span>
-</span><span id="__span-3-25"><a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a>
-</span><span id="__span-3-26"><a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a><span class="n">epochs</span> <span class="o">=</span> <span class="mi">2000</span>
-</span><span id="__span-3-27"><a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a>
-</span><span id="__span-3-28"><a id="__codelineno-3-28" name="__codelineno-3-28" href="#__codelineno-3-28"></a><span class="n">losses</span> <span class="o">=</span> <span class="p">[]</span>
-</span><span id="__span-3-29"><a id="__codelineno-3-29" name="__codelineno-3-29" href="#__codelineno-3-29"></a>
-</span><span id="__span-3-30"><a id="__codelineno-3-30" name="__codelineno-3-30" href="#__codelineno-3-30"></a><span class="k">for</span> <span class="n">epoch</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">epochs</span><span class="p">):</span>
-</span><span id="__span-3-31"><a id="__codelineno-3-31" name="__codelineno-3-31" href="#__codelineno-3-31"></a>
-</span><span id="__span-3-32"><a id="__codelineno-3-32" name="__codelineno-3-32" href="#__codelineno-3-32"></a>    <span class="n">optimizer</span><span class="o">.</span><span class="n">zero_grad</span><span class="p">()</span>
-</span><span id="__span-3-33"><a id="__codelineno-3-33" name="__codelineno-3-33" href="#__codelineno-3-33"></a>
-</span><span id="__span-3-34"><a id="__codelineno-3-34" name="__codelineno-3-34" href="#__codelineno-3-34"></a>    <span class="n">pred</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-</span><span id="__span-3-35"><a id="__codelineno-3-35" name="__codelineno-3-35" href="#__codelineno-3-35"></a>
-</span><span id="__span-3-36"><a id="__codelineno-3-36" name="__codelineno-3-36" href="#__codelineno-3-36"></a>    <span class="n">loss</span> <span class="o">=</span> <span class="n">criterion</span><span class="p">(</span><span class="n">pred</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-</span><span id="__span-3-37"><a id="__codelineno-3-37" name="__codelineno-3-37" href="#__codelineno-3-37"></a>
-</span><span id="__span-3-38"><a id="__codelineno-3-38" name="__codelineno-3-38" href="#__codelineno-3-38"></a>    <span class="n">loss</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
-</span><span id="__span-3-39"><a id="__codelineno-3-39" name="__codelineno-3-39" href="#__codelineno-3-39"></a>
-</span><span id="__span-3-40"><a id="__codelineno-3-40" name="__codelineno-3-40" href="#__codelineno-3-40"></a>    <span class="n">optimizer</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
-</span><span id="__span-3-41"><a id="__codelineno-3-41" name="__codelineno-3-41" href="#__codelineno-3-41"></a>
-</span><span id="__span-3-42"><a id="__codelineno-3-42" name="__codelineno-3-42" href="#__codelineno-3-42"></a>    <span class="n">losses</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">loss</span><span class="o">.</span><span class="n">item</span><span class="p">())</span>
-</span><span id="__span-3-43"><a id="__codelineno-3-43" name="__codelineno-3-43" href="#__codelineno-3-43"></a>
-</span><span id="__span-3-44"><a id="__codelineno-3-44" name="__codelineno-3-44" href="#__codelineno-3-44"></a>    <span class="k">if</span> <span class="p">(</span><span class="n">epoch</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="mi">200</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-</span><span id="__span-3-45"><a id="__codelineno-3-45" name="__codelineno-3-45" href="#__codelineno-3-45"></a>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Epoch </span><span class="si">{</span><span class="n">epoch</span><span class="o">+</span><span class="mi">1</span><span class="si">:</span><span class="s2">4d</span><span class="si">}</span><span class="s2"> Loss = </span><span class="si">{</span><span class="n">loss</span><span class="o">.</span><span class="n">item</span><span class="p">()</span><span class="si">:</span><span class="s2">.6f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-</span></code></pre></div>
-<hr />
-<h1 id="prediction">Prediction<a class="headerlink" href="#prediction" title="Permanent link">&para;</a></h1>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">no_grad</span><span class="p">():</span>
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>    <span class="n">prediction</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
-</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
-</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">numpy</span><span class="p">(),</span> <span class="n">y</span><span class="o">.</span><span class="n">numpy</span><span class="p">(),</span> <span class="n">s</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Training Data&quot;</span><span class="p">)</span>
-</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">numpy</span><span class="p">(),</span> <span class="n">prediction</span><span class="o">.</span><span class="n">numpy</span><span class="p">(),</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Prediction&quot;</span><span class="p">)</span>
-</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
-</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span>
-</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;y&quot;</span><span class="p">)</span>
-</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</span></code></pre></div>
-<hr />
-<h1 id="training-workflow">Training Workflow<a class="headerlink" href="#training-workflow" title="Permanent link">&para;</a></h1>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>Training Data
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>      │
-</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>      ▼
-</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>Neural Network
-</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>      │
-</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>      ▼
-</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>Prediction
-</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>      │
-</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>      ▼
-</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>Compute Loss
-</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>      │
-</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>      ▼
-</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>Backpropagation
-</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>      │
-</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>      ▼
-</span><span id="__span-5-16"><a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>Update Weights
-</span><span id="__span-5-17"><a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a>      │
-</span><span id="__span-5-18"><a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a>      ▼
-</span><span id="__span-5-19"><a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a>Repeat
-</span></code></pre></div>
-<hr />
-<h1 id="key-takeaways">Key Takeaways<a class="headerlink" href="#key-takeaways" title="Permanent link">&para;</a></h1>
-<ul>
-<li>Deep learning uses multiple layers to learn hierarchical features.</li>
-<li>Each layer performs a linear transformation followed by a nonlinear activation.</li>
-<li>Training minimizes a loss function using gradient-based optimization.</li>
-<li>Backpropagation computes gradients efficiently using the chain rule.</li>
-<li>PyTorch automates differentiation with <code>autograd</code>, making model development straightforward.</li>
-</ul>
+        <h1 id="blog">Blog<a class="headerlink" href="#blog" title="Permanent link">&para;</a></h1>
       </header>
       
       
