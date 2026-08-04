@@ -12,10 +12,10 @@
         <meta name="author" content="Sonu Kumar">
       
       
-        <link rel="canonical" href="https://sonuphysics.github.io/esta3/blog/equivariant_graph_transformer/">
+        <link rel="canonical" href="https://sonuphysics.github.io/esta3/ML/ML_descriptors/">
       
       
-        <link rel="prev" href="../ML_descriptors/">
+        <link rel="prev" href="../ML_basics/">
       
       
         <link rel="next" href="../../reference/esta/">
@@ -26,7 +26,7 @@
     
     
       
-        <title>Transformer - EStA 3</title>
+        <title>ML Descriptors - EStA 3</title>
       
     
     
@@ -92,7 +92,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#equiformerv2-equivariant-graph-transformers-for-atomic-forces-and-energies" class="md-skip">
+        <a href="#machine-learning-featuresdescriptors-and-algorithms-in-materials-science" class="md-skip">
           Skip to content
         </a>
       
@@ -131,7 +131,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Transformer
+              ML Descriptors
             
           </span>
         </div>
@@ -352,7 +352,7 @@
   
     
   
-  Blog
+  ML
 
         </a>
       </li>
@@ -660,7 +660,7 @@
             
   
   <span class="md-ellipsis">
-    Blog
+    ML
     
   </span>
   
@@ -671,7 +671,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
-            Blog
+            ML
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -687,28 +687,6 @@
   
   <span class="md-ellipsis">
     ML basics
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../ML_descriptors/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    ML Descriptors
     
   </span>
   
@@ -739,7 +717,7 @@
           
   
   <span class="md-ellipsis">
-    Transformer
+    ML Descriptors
     
   </span>
   
@@ -751,7 +729,7 @@
         
   
   <span class="md-ellipsis">
-    Transformer
+    ML Descriptors
     
   </span>
   
@@ -774,37 +752,37 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#0-equivariance-vs-invariance-the-property-everything-below-protects" class="md-nav__link">
+  <a href="#1-why-raw-structures-dont-work-as-inputs" class="md-nav__link">
     <span class="md-ellipsis">
-      0. Equivariance vs. Invariance — the Property Everything Below Protects
+      1. Why Raw Structures Don't Work as Inputs
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#1-representing-3d-shapes-irreducible-representations-irreps" class="md-nav__link">
+  <a href="#2-structural-descriptors-fingerprint-vectors" class="md-nav__link">
     <span class="md-ellipsis">
-      1. Representing 3D Shapes: Irreducible Representations (Irreps)
+      2. Structural Descriptors (Fingerprint Vectors)
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="1. Representing 3D Shapes: Irreducible Representations (Irreps)">
+    <nav class="md-nav" aria-label="2. Structural Descriptors (Fingerprint Vectors)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#11-what-the-degree-ell-actually-encodes" class="md-nav__link">
+  <a href="#21-the-coulomb-matrix-molecules-clusters" class="md-nav__link">
     <span class="md-ellipsis">
-      1.1 What the degree \(\ell\) actually encodes
+      2.1 The Coulomb Matrix (molecules / clusters)
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#12-how-rotation-acts-on-each-block" class="md-nav__link">
+  <a href="#22-atom-centered-symmetry-functions-acsf" class="md-nav__link">
     <span class="md-ellipsis">
-      1.2 How rotation acts on each block
+      2.2 Atom-Centered Symmetry Functions (ACSF)
     </span>
   </a>
   
@@ -816,28 +794,73 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-replacing-3d-multiplication-escn-convolutions" class="md-nav__link">
+  <a href="#3-graph-representations-crystal-graphs" class="md-nav__link">
     <span class="md-ellipsis">
-      2. Replacing 3D Multiplication: eSCN Convolutions
+      3. Graph Representations (Crystal Graphs)
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="2. Replacing 3D Multiplication: eSCN Convolutions">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-connecting-descriptors-to-supervised-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Connecting Descriptors to Supervised Learning
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-gaussian-process-regression-gpr" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Gaussian Process Regression (GPR)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Gaussian Process Regression (GPR)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#21-why-the-naive-approach-is-slow" class="md-nav__link">
+  <a href="#51-what-gaussian-actually-means" class="md-nav__link">
     <span class="md-ellipsis">
-      2.1 Why the naive approach is slow
+      5.1 What "Gaussian" Actually Means
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#22-the-escn-trick-align-then-do-2d-math" class="md-nav__link">
+  <a href="#52-from-gaussian-vectors-to-gaussian-processes" class="md-nav__link">
     <span class="md-ellipsis">
-      2.2 The eSCN trick: align, then do 2D math
+      5.2 From Gaussian Vectors to Gaussian Processes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-the-kernel-encoding-nearby-inputs-should-give-similar-outputs" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.3 The Kernel: Encoding "Nearby Inputs Should Give Similar Outputs"
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#54-the-actual-prediction-regression-equations" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.4 The Actual Prediction (Regression) Equations
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#55-why-gpr-matters-for-materialscatalysis-workflows" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.5 Why GPR Matters for Materials/Catalysis Workflows
     </span>
   </a>
   
@@ -849,45 +872,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-stabilizing-the-network-separable-layer-normalization-sln" class="md-nav__link">
+  <a href="#6-quick-comparison" class="md-nav__link">
     <span class="md-ellipsis">
-      3. Stabilizing the Network: Separable Layer Normalization (SLN)
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-vector-non-linearity-separable-s2-activation" class="md-nav__link">
-    <span class="md-ellipsis">
-      4. Vector Non-Linearity: Separable \(S^2\) Activation
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5-the-transformer-part-equivariant-graph-attention" class="md-nav__link">
-    <span class="md-ellipsis">
-      5. The Transformer Part: Equivariant Graph Attention
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#6-summary-of-the-data-flow" class="md-nav__link">
-    <span class="md-ellipsis">
-      6. Summary of the Data Flow
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#7-why-this-matters-for-dft-adjacent-workflows" class="md-nav__link">
-    <span class="md-ellipsis">
-      7. Why This Matters for DFT-Adjacent Workflows
+      6. Quick Comparison
     </span>
   </a>
   
@@ -897,6 +884,28 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../blog/equivariant_graph_transformer.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Transformer
+    
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -12840,37 +12849,37 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#0-equivariance-vs-invariance-the-property-everything-below-protects" class="md-nav__link">
+  <a href="#1-why-raw-structures-dont-work-as-inputs" class="md-nav__link">
     <span class="md-ellipsis">
-      0. Equivariance vs. Invariance — the Property Everything Below Protects
+      1. Why Raw Structures Don't Work as Inputs
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#1-representing-3d-shapes-irreducible-representations-irreps" class="md-nav__link">
+  <a href="#2-structural-descriptors-fingerprint-vectors" class="md-nav__link">
     <span class="md-ellipsis">
-      1. Representing 3D Shapes: Irreducible Representations (Irreps)
+      2. Structural Descriptors (Fingerprint Vectors)
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="1. Representing 3D Shapes: Irreducible Representations (Irreps)">
+    <nav class="md-nav" aria-label="2. Structural Descriptors (Fingerprint Vectors)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#11-what-the-degree-ell-actually-encodes" class="md-nav__link">
+  <a href="#21-the-coulomb-matrix-molecules-clusters" class="md-nav__link">
     <span class="md-ellipsis">
-      1.1 What the degree \(\ell\) actually encodes
+      2.1 The Coulomb Matrix (molecules / clusters)
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#12-how-rotation-acts-on-each-block" class="md-nav__link">
+  <a href="#22-atom-centered-symmetry-functions-acsf" class="md-nav__link">
     <span class="md-ellipsis">
-      1.2 How rotation acts on each block
+      2.2 Atom-Centered Symmetry Functions (ACSF)
     </span>
   </a>
   
@@ -12882,28 +12891,73 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-replacing-3d-multiplication-escn-convolutions" class="md-nav__link">
+  <a href="#3-graph-representations-crystal-graphs" class="md-nav__link">
     <span class="md-ellipsis">
-      2. Replacing 3D Multiplication: eSCN Convolutions
+      3. Graph Representations (Crystal Graphs)
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="2. Replacing 3D Multiplication: eSCN Convolutions">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-connecting-descriptors-to-supervised-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Connecting Descriptors to Supervised Learning
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-gaussian-process-regression-gpr" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Gaussian Process Regression (GPR)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Gaussian Process Regression (GPR)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#21-why-the-naive-approach-is-slow" class="md-nav__link">
+  <a href="#51-what-gaussian-actually-means" class="md-nav__link">
     <span class="md-ellipsis">
-      2.1 Why the naive approach is slow
+      5.1 What "Gaussian" Actually Means
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#22-the-escn-trick-align-then-do-2d-math" class="md-nav__link">
+  <a href="#52-from-gaussian-vectors-to-gaussian-processes" class="md-nav__link">
     <span class="md-ellipsis">
-      2.2 The eSCN trick: align, then do 2D math
+      5.2 From Gaussian Vectors to Gaussian Processes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-the-kernel-encoding-nearby-inputs-should-give-similar-outputs" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.3 The Kernel: Encoding "Nearby Inputs Should Give Similar Outputs"
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#54-the-actual-prediction-regression-equations" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.4 The Actual Prediction (Regression) Equations
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#55-why-gpr-matters-for-materialscatalysis-workflows" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.5 Why GPR Matters for Materials/Catalysis Workflows
     </span>
   </a>
   
@@ -12915,45 +12969,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-stabilizing-the-network-separable-layer-normalization-sln" class="md-nav__link">
+  <a href="#6-quick-comparison" class="md-nav__link">
     <span class="md-ellipsis">
-      3. Stabilizing the Network: Separable Layer Normalization (SLN)
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-vector-non-linearity-separable-s2-activation" class="md-nav__link">
-    <span class="md-ellipsis">
-      4. Vector Non-Linearity: Separable \(S^2\) Activation
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5-the-transformer-part-equivariant-graph-attention" class="md-nav__link">
-    <span class="md-ellipsis">
-      5. The Transformer Part: Equivariant Graph Attention
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#6-summary-of-the-data-flow" class="md-nav__link">
-    <span class="md-ellipsis">
-      6. Summary of the Data Flow
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#7-why-this-matters-for-dft-adjacent-workflows" class="md-nav__link">
-    <span class="md-ellipsis">
-      7. Why This Matters for DFT-Adjacent Workflows
+      6. Quick Comparison
     </span>
   </a>
   
@@ -12975,176 +12993,205 @@
 
 
 
-<h1 id="equiformerv2-equivariant-graph-transformers-for-atomic-forces-and-energies">EquiformerV2: Equivariant Graph Transformers for Atomic Forces and Energies<a class="headerlink" href="#equiformerv2-equivariant-graph-transformers-for-atomic-forces-and-energies" title="Permanent link">&para;</a></h1>
-<p><a href="https://arxiv.org/abs/2306.12059">EquiformerV2</a> is a Graph Transformer that predicts 3D atomic forces and total energy while mathematically guaranteeing <strong>rotational equivariance</strong>: rotate the input structure and the predicted force vectors rotate by the identical amount, with the predicted energy left unchanged. It avoids the brute-force cost of full 3D tensor algebra by re-using a clever alignment trick (eSCN) that turns expensive 3D rotation math into cheap 2D math.</p>
+<h1 id="machine-learning-featuresdescriptors-and-algorithms-in-materials-science">Machine Learning Features/Descriptors, and Algorithms in Materials Science<a class="headerlink" href="#machine-learning-featuresdescriptors-and-algorithms-in-materials-science" title="Permanent link">&para;</a></h1>
+<h2 id="1-why-raw-structures-dont-work-as-inputs">1. Why Raw Structures Don't Work as Inputs<a class="headerlink" href="#1-why-raw-structures-dont-work-as-inputs" title="Permanent link">&para;</a></h2>
+<p>A crystal or molecule is just a list of atomic species and 3D coordinates. Algorithms need a <strong>fixed-format numerical object</strong> (a vector or a graph), and that object must obey three physical invariances:</p>
+<ul>
+<li><strong>Translation invariance</strong> — shifting the whole structure in space shouldn't change the prediction.</li>
+<li><strong>Rotation invariance</strong> — rotating the structure shouldn't change the prediction.</li>
+<li><strong>Permutation invariance</strong> — relabeling atom 1 as atom 2 (same physical structure, different bookkeeping) shouldn't change the prediction.</li>
+</ul>
+<p>A "descriptor" or "featurizer" is simply a function</p>
+<div class="arithmatex">\[
+\phi: \{\text{atoms, positions}\} \;\longrightarrow\; \mathbf{x} \in \mathbb{R}^d
+\]</div>
+<p>that is built so these three symmetries are respected automatically, rather than something a model has to learn from data.</p>
 <hr />
-<h2 id="0-equivariance-vs-invariance-the-property-everything-below-protects">0. Equivariance vs. Invariance — the Property Everything Below Protects<a class="headerlink" href="#0-equivariance-vs-invariance-the-property-everything-below-protects" title="Permanent link">&para;</a></h2>
-<p>Formally, a function <span class="arithmatex">\(f\)</span> is <strong>equivariant</strong> to a symmetry group <span class="arithmatex">\(G\)</span> (here, 3D rotations <span class="arithmatex">\(SO(3)\)</span>) if, for every rotation <span class="arithmatex">\(R\)</span>:</p>
+<h2 id="2-structural-descriptors-fingerprint-vectors">2. Structural Descriptors (Fingerprint Vectors)<a class="headerlink" href="#2-structural-descriptors-fingerprint-vectors" title="Permanent link">&para;</a></h2>
+<h3 id="21-the-coulomb-matrix-molecules-clusters">2.1 The Coulomb Matrix (molecules / clusters)<a class="headerlink" href="#21-the-coulomb-matrix-molecules-clusters" title="Permanent link">&para;</a></h3>
+<p>For a system of <span class="arithmatex">\(N\)</span> atoms, build an <span class="arithmatex">\(N \times N\)</span> matrix <span class="arithmatex">\(M\)</span>:</p>
 <div class="arithmatex">\[
-f(R\cdot \mathbf{x}) = R \cdot f(\mathbf{x})
+M_{ij} =
+\begin{cases}
+0.5\, Z_i^{2.4} &amp; i = j \quad \text{(self-energy term)} \\[4pt]
+\dfrac{Z_i Z_j}{\lVert \mathbf{R}_i - \mathbf{R}_j \rVert} &amp; i \neq j \quad \text{(pairwise Coulomb repulsion)}
+\end{cases}
 \]</div>
-<p>i.e. rotate the input, and the output rotates the same way. This is what you need for <strong>forces</strong> — a vector quantity.</p>
-<p><strong>Invariance</strong> is the special case where the output doesn't rotate at all:</p>
+<p><strong>Where each symbol comes from, physically:</strong></p>
+<ul>
+<li><span class="arithmatex">\(Z_i\)</span>: nuclear charge (atomic number) of atom <span class="arithmatex">\(i\)</span> — heavier atoms get a bigger diagonal value.</li>
+<li><span class="arithmatex">\(\lVert \mathbf{R}_i - \mathbf{R}_j \rVert\)</span>: Euclidean distance, <span class="arithmatex">\(\sqrt{(x_i-x_j)^2+(y_i-y_j)^2+(z_i-z_j)^2}\)</span>.</li>
+<li>The off-diagonal form mirrors the classical Coulomb energy between two point charges, <span class="arithmatex">\(E \propto \frac{q_1 q_2}{r}\)</span>.</li>
+<li>The exponent <span class="arithmatex">\(2.4\)</span> on the diagonal is empirical — it was fit so the self-term roughly reproduces the total electronic energy of a free atom.</li>
+</ul>
+<p><strong>Tiny worked example (2 atoms, H–F, <span class="arithmatex">\(Z_H=1\)</span>, <span class="arithmatex">\(Z_F=9\)</span>, bond length <span class="arithmatex">\(\approx 0.92\ \text{Å}\)</span>):</strong></p>
 <div class="arithmatex">\[
-E(R\cdot \mathbf{x}) = E(\mathbf{x})
+M =
+\begin{pmatrix}
+0.5(1)^{2.4} &amp; \dfrac{1\times9}{0.92} \\[6pt]
+\dfrac{1\times9}{0.92} &amp; 0.5(9)^{2.4}
+\end{pmatrix}
+=
+\begin{pmatrix}
+0.5 &amp; 9.78 \\
+9.78 &amp; 73.6
+\end{pmatrix}
 \]</div>
-<p>which is what you need for <strong>total energy</strong> — a scalar has to come out identical no matter which way the molecule was sitting when you looked at it. EquiformerV2's entire design is about building a network where every internal operation is provably equivariant, so the final energy comes out invariant and the final forces come out equivariant <em>by construction</em>, not by hoping the training data teaches it.</p>
+<p><strong>Why permutation is a problem here:</strong> swapping atom order swaps rows/columns of <span class="arithmatex">\(M\)</span>, giving a <em>different</em> matrix for the <em>same</em> molecule. In practice this is fixed by sorting rows/columns by norm, or by using it only through permutation-invariant summaries (eigenvalues of <span class="arithmatex">\(M\)</span>, or a sorted Coulomb matrix).</p>
+<p><strong>Simple picture:</strong> <span class="arithmatex">\(M\)</span> is a table where the diagonal says "how heavy is this atom" and every off-diagonal cell says "how strongly do these two atoms electrostatically feel each other."</p>
+<h3 id="22-atom-centered-symmetry-functions-acsf">2.2 Atom-Centered Symmetry Functions (ACSF)<a class="headerlink" href="#22-atom-centered-symmetry-functions-acsf" title="Permanent link">&para;</a></h3>
+<p>Periodic crystals have no fixed atom count, so instead of one matrix for the whole system, ACSF builds a <em>local</em> fingerprint around each atom <span class="arithmatex">\(i\)</span> from its neighbors <span class="arithmatex">\(j\)</span>.</p>
+<p><strong>Radial term (2-body, "how many atoms are at what distance"):</strong></p>
+<div class="arithmatex">\[
+G_i^{\text{rad}} = \sum_{j \neq i} e^{-\eta (R_{ij}-R_s)^2}\, f_c(R_{ij})
+\]</div>
+<ul>
+<li><span class="arithmatex">\(R_{ij}\)</span>: distance from center atom <span class="arithmatex">\(i\)</span> to neighbor <span class="arithmatex">\(j\)</span>.</li>
+<li><span class="arithmatex">\(\eta\)</span>: controls how <em>narrow</em> the Gaussian probe is (large <span class="arithmatex">\(\eta\)</span> = very local shell).</li>
+<li><span class="arithmatex">\(R_s\)</span>: controls <em>where</em> that shell is centered (e.g. probe the 2<sup>nd</sup> nearest-neighbor shell).</li>
+<li><span class="arithmatex">\(f_c\)</span>: smooth cutoff so atoms outside a physical radius <span class="arithmatex">\(R_c\)</span> contribute nothing:</li>
+</ul>
+<div class="arithmatex">\[
+f_c(R) =
+\begin{cases}
+0.5\left[\cos\!\left(\dfrac{\pi R}{R_c}\right) + 1\right] &amp; R \le R_c \\
+0 &amp; R &gt; R_c
+\end{cases}
+\]</div>
+<p>This cutoff smoothly decays to zero (and has zero slope at <span class="arithmatex">\(R_c\)</span>), so as an atom drifts in or out of the cutoff sphere during a simulation, the descriptor — and any energy/force built from it — doesn't jump discontinuously.</p>
+<p><strong>Angular term (3-body, "at what angles do neighbor pairs sit"):</strong> this is what actually distinguishes, e.g., a tetrahedral site from an octahedral one at the <em>same</em> set of bond lengths.</p>
+<div class="arithmatex">\[
+G_i^{\text{ang}} = 2^{1-\zeta}\sum_{j\neq i}\sum_{k \neq i,j} \left(1+\lambda\cos\theta_{ijk}\right)^{\zeta} e^{-\eta\left(R_{ij}^2+R_{ik}^2+R_{jk}^2\right)}\, f_c(R_{ij})f_c(R_{ik})f_c(R_{jk})
+\]</div>
+<ul>
+<li><span class="arithmatex">\(\theta_{ijk}\)</span>: the bond angle at atom <span class="arithmatex">\(i\)</span> formed by neighbors <span class="arithmatex">\(j\)</span> and <span class="arithmatex">\(k\)</span>.</li>
+<li><span class="arithmatex">\(\lambda = \pm 1\)</span>: shifts which angles (<span class="arithmatex">\(0^\circ\)</span> or <span class="arithmatex">\(180^\circ\)</span>) are emphasized.</li>
+<li><span class="arithmatex">\(\zeta\)</span>: sharpens the angular peak — larger <span class="arithmatex">\(\zeta\)</span> means the function responds only to a narrow range of angles.</li>
+</ul>
+<p>A full ACSF fingerprint for atom <span class="arithmatex">\(i\)</span> is a vector built from many <span class="arithmatex">\(G^{\text{rad}}\)</span> and <span class="arithmatex">\(G^{\text{ang}}\)</span> terms, each with different <span class="arithmatex">\((\eta, R_s)\)</span> or <span class="arithmatex">\((\eta,\zeta,\lambda)\)</span> — effectively a bar-code of "how much stuff is nearby, at which distances, and at which angles."</p>
 <hr />
-<h2 id="1-representing-3d-shapes-irreducible-representations-irreps">1. Representing 3D Shapes: Irreducible Representations (Irreps)<a class="headerlink" href="#1-representing-3d-shapes-irreducible-representations-irreps" title="Permanent link">&para;</a></h2>
-<h3 id="11-what-the-degree-ell-actually-encodes">1.1 What the degree <span class="arithmatex">\(\ell\)</span> actually encodes<a class="headerlink" href="#11-what-the-degree-ell-actually-encodes" title="Permanent link">&para;</a></h3>
-<p>Physical rotations of 3D functions decompose naturally into blocks called <strong>irreducible representations</strong> of <span class="arithmatex">\(SO(3)\)</span>, indexed by a non-negative integer degree <span class="arithmatex">\(\ell\)</span>. Each degree-<span class="arithmatex">\(\ell\)</span> block has exactly <span class="arithmatex">\(2\ell+1\)</span> components, indexed <span class="arithmatex">\(m = -\ell, \dots, \ell\)</span>, and transforms under a real spherical harmonic basis <span class="arithmatex">\(Y_\ell^m\)</span>:</p>
+<h2 id="3-graph-representations-crystal-graphs">3. Graph Representations (Crystal Graphs)<a class="headerlink" href="#3-graph-representations-crystal-graphs" title="Permanent link">&para;</a></h2>
+<p>Represent the crystal as <span class="arithmatex">\(\mathcal{G} = (\mathcal{V}, \mathcal{E})\)</span>:</p>
+<ul>
+<li><strong>Nodes</strong> <span class="arithmatex">\(\mathcal{V}\)</span>: atoms, each carrying a feature vector <span class="arithmatex">\(\mathbf{v}_i\)</span> (atomic number, electronegativity, group/period, valence electron count, ...).</li>
+<li><strong>Edges</strong> <span class="arithmatex">\(\mathcal{E}\)</span>: bonds, each carrying a feature vector <span class="arithmatex">\(\mathbf{e}_{ij}\)</span> (bond length, sometimes bond angle, or a Gaussian-expanded version of <span class="arithmatex">\(R_{ij}\)</span>).</li>
+</ul>
+<p><strong>Message passing update (one layer, schematically):</strong></p>
 <div class="arithmatex">\[
-\mathbf{f} = \bigoplus_{\ell=0}^{L} \mathbf{f}^{(\ell)}, \qquad \dim \mathbf{f}^{(\ell)} = (2\ell+1)\times C_\ell
+\mathbf{m}_{ij} = \sigma\!\big(W_1 \mathbf{v}_i + W_2 \mathbf{v}_j + W_3 \mathbf{e}_{ij}\big), \qquad
+\mathbf{v}_i^{\text{new}} = \mathbf{v}_i + \sum_{j \in \mathcal{N}(i)} \mathbf{m}_{ij}
 \]</div>
-<p>where <span class="arithmatex">\(C_\ell\)</span> is the number of independent channels the network learns at that degree (analogous to "number of feature maps" in a CNN).</p>
+<ul>
+<li><span class="arithmatex">\(\mathcal{N}(i)\)</span>: the set of bonded/nearby neighbors of atom <span class="arithmatex">\(i\)</span>.</li>
+<li><span class="arithmatex">\(W_1, W_2, W_3\)</span>: learnable weight matrices.</li>
+<li><span class="arithmatex">\(\sigma\)</span>: a nonlinearity (e.g. softplus, ReLU).</li>
+</ul>
+<p>Each "message" <span class="arithmatex">\(\mathbf{m}_{ij}\)</span> packages up what neighbor <span class="arithmatex">\(j\)</span> tells atom <span class="arithmatex">\(i\)</span>; summing over neighbors and adding it back onto <span class="arithmatex">\(\mathbf{v}_i\)</span> updates atom <span class="arithmatex">\(i\)</span>'s representation using its local chemical environment. Stacking <span class="arithmatex">\(L\)</span> such layers lets information from <span class="arithmatex">\(L\)</span> bonds away reach a given atom — the graph analog of extending ACSF's cutoff radius. After several layers, node features are pooled (e.g. summed or averaged) into a single whole-crystal vector, which is then regressed against a target property.</p>
+<p><strong>Simple picture:</strong> the crystal is a subway map — stations (nodes) carry chemical identity, tracks (edges) carry bond distance, and "riding the tracks" for a few stops is how each atom learns about its neighborhood.</p>
+<hr />
+<h2 id="4-connecting-descriptors-to-supervised-learning">4. Connecting Descriptors to Supervised Learning<a class="headerlink" href="#4-connecting-descriptors-to-supervised-learning" title="Permanent link">&para;</a></h2>
+<p>Once a structure is turned into <span class="arithmatex">\(\mathbf{x}\)</span> (fingerprint vector or pooled graph embedding):</p>
+<ul>
+<li><strong>Regression</strong> (continuous target, e.g. formation energy <span class="arithmatex">\(E_f\)</span>): learn <span class="arithmatex">\(f(\mathbf{x}) \approx y\)</span> using Random Forests, kernel ridge regression, neural networks, or — see below — <strong>Gaussian Process Regression</strong>.</li>
+<li><strong>Classification</strong> (categorical target, e.g. space group): feed <span class="arithmatex">\(\mathbf{x}\)</span> into an SVM or a softmax layer to get class probabilities <span class="arithmatex">\(p(y=c\mid\mathbf{x})\)</span>.</li>
+</ul>
+<hr />
+<h2 id="5-gaussian-process-regression-gpr">5. Gaussian Process Regression (GPR)<a class="headerlink" href="#5-gaussian-process-regression-gpr" title="Permanent link">&para;</a></h2>
+<h3 id="51-what-gaussian-actually-means">5.1 What "Gaussian" Actually Means<a class="headerlink" href="#51-what-gaussian-actually-means" title="Permanent link">&para;</a></h3>
+<p>The ordinary 1D <strong>Gaussian (normal) distribution</strong> describes how likely a single number <span class="arithmatex">\(x\)</span> is, given a mean <span class="arithmatex">\(\mu\)</span> (center) and variance <span class="arithmatex">\(\sigma^2\)</span> (spread):</p>
+<div class="arithmatex">\[
+p(x) = \frac{1}{\sqrt{2\pi\sigma^2}}\, e^{-\frac{(x-\mu)^2}{2\sigma^2}}
+\]</div>
+<p>It's the familiar bell curve: most probability mass sits near <span class="arithmatex">\(\mu\)</span>, and <span class="arithmatex">\(\sigma\)</span> sets how fast it falls off.</p>
+<p>This generalizes to a vector <span class="arithmatex">\(\mathbf{x} = (x_1,\dots,x_k)\)</span> — a <strong>multivariate Gaussian</strong>:</p>
+<div class="arithmatex">\[
+p(\mathbf{x}) = \frac{1}{(2\pi)^{k/2}\lvert\Sigma\rvert^{1/2}}\, \exp\!\left(-\tfrac12(\mathbf{x}-\boldsymbol{\mu})^{\!\top}\Sigma^{-1}(\mathbf{x}-\boldsymbol{\mu})\right)
+\]</div>
+<p>Here <span class="arithmatex">\(\boldsymbol{\mu}\)</span> is a vector of means (one per coordinate) and <span class="arithmatex">\(\Sigma\)</span> is a <span class="arithmatex">\(k\times k\)</span> <strong>covariance matrix</strong>: <span class="arithmatex">\(\Sigma_{ab} = \text{Cov}(x_a, x_b)\)</span> tells you how strongly coordinate <span class="arithmatex">\(a\)</span> and coordinate <span class="arithmatex">\(b\)</span> move together. This one object — a covariance matrix — is the entire idea GPR is built on.</p>
+<h3 id="52-from-gaussian-vectors-to-gaussian-processes">5.2 From Gaussian Vectors to Gaussian <em>Processes</em><a class="headerlink" href="#52-from-gaussian-vectors-to-gaussian-processes" title="Permanent link">&para;</a></h3>
+<p>A Gaussian Process (GP) is the infinite-dimensional extension of the idea above: instead of a distribution over a finite vector, it's a <strong>distribution over functions</strong>. Any finite set of function values <span class="arithmatex">\(f(x_1), f(x_2), \dots, f(x_n)\)</span> is assumed to be jointly Gaussian:</p>
+<div class="arithmatex">\[
+f(\mathbf{x}) \sim \mathcal{GP}\big(m(\mathbf{x}),\, k(\mathbf{x},\mathbf{x}')\big)
+\]</div>
+<ul>
+<li><span class="arithmatex">\(m(\mathbf{x}) = \mathbb{E}[f(\mathbf{x})]\)</span>: the mean function (often just set to 0 after centering the data).</li>
+<li><span class="arithmatex">\(k(\mathbf{x},\mathbf{x}') = \mathbb{E}\big[(f(\mathbf{x})-m(\mathbf{x}))(f(\mathbf{x}')-m(\mathbf{x}'))\big]\)</span>: the <strong>covariance/kernel function</strong> — this plays the exact same role as <span class="arithmatex">\(\Sigma_{ab}\)</span> above, except now it's defined for <em>any pair of inputs</em>, not just a fixed finite list.</li>
+</ul>
+<p><strong>Intuition:</strong> a GP is a probability distribution over an infinite bag of candidate functions that could explain your data. Before seeing any data, all "reasonable" functions (as defined by the kernel) are equally in play. Every data point you observe rules out functions that don't pass near it, narrowing the bag.</p>
+<h3 id="53-the-kernel-encoding-nearby-inputs-should-give-similar-outputs">5.3 The Kernel: Encoding "Nearby Inputs Should Give Similar Outputs"<a class="headerlink" href="#53-the-kernel-encoding-nearby-inputs-should-give-similar-outputs" title="Permanent link">&para;</a></h3>
+<p>The most common choice is the <strong>squared-exponential (RBF) kernel</strong>:</p>
+<div class="arithmatex">\[
+k(\mathbf{x},\mathbf{x}') = \sigma_f^2 \exp\!\left(-\frac{\lVert \mathbf{x}-\mathbf{x}' \rVert^2}{2\ell^2}\right)
+\]</div>
+<ul>
+<li><span class="arithmatex">\(\sigma_f^2\)</span>: signal variance — overall vertical scale of the function's variation.</li>
+<li><span class="arithmatex">\(\ell\)</span>: length scale — how far apart two inputs can be before the model stops treating them as correlated. Small <span class="arithmatex">\(\ell\)</span> → wiggly, locally-fit function. Large <span class="arithmatex">\(\ell\)</span> → smooth, almost-linear function.</li>
+</ul>
+<p>These are <strong>hyperparameters</strong>, usually tuned by maximizing the marginal likelihood of the observed data (not by cross-validating a loss the way you'd tune a neural net).</p>
+<h3 id="54-the-actual-prediction-regression-equations">5.4 The Actual Prediction (Regression) Equations<a class="headerlink" href="#54-the-actual-prediction-regression-equations" title="Permanent link">&para;</a></h3>
+<p>Given training inputs <span class="arithmatex">\(X=\{\mathbf{x}_1,\dots,\mathbf{x}_n\}\)</span> with (noisy) targets <span class="arithmatex">\(\mathbf{y}\)</span>, and a new test point <span class="arithmatex">\(\mathbf{x}_*\)</span>, GPR assumes:</p>
+<div class="arithmatex">\[
+\begin{pmatrix}\mathbf{y}\\ f_*\end{pmatrix} \sim \mathcal{N}\left(\mathbf{0},\begin{pmatrix} K + \sigma_n^2 I &amp; \mathbf{k}_* \\ \mathbf{k}_*^{\!\top} &amp; k_{**}\end{pmatrix}\right)
+\]</div>
+<p>where <span class="arithmatex">\(K_{ab}=k(\mathbf{x}_a,\mathbf{x}_b)\)</span> is the <span class="arithmatex">\(n\times n\)</span> training-training kernel matrix, <span class="arithmatex">\(\mathbf{k}_*\)</span> is the vector <span class="arithmatex">\(k(\mathbf{x}_*,\mathbf{x}_a)\)</span>, <span class="arithmatex">\(k_{**}=k(\mathbf{x}_*,\mathbf{x}_*)\)</span>, and <span class="arithmatex">\(\sigma_n^2\)</span> is assumed measurement noise. Conditioning this joint Gaussian on the observed <span class="arithmatex">\(\mathbf{y}\)</span> (standard Gaussian conditioning identities) gives closed-form predictions:</p>
+<div class="arithmatex">\[
+\bar{f}_* = \mathbf{k}_*^{\!\top}\big(K+\sigma_n^2 I\big)^{-1}\mathbf{y} \qquad \text{(posterior mean — the prediction)}
+\]</div>
+<div class="arithmatex">\[
+\mathbb{V}[f_*] = k_{**} - \mathbf{k}_*^{\!\top}\big(K+\sigma_n^2 I\big)^{-1}\mathbf{k}_* \qquad \text{(posterior variance — the uncertainty)}
+\]</div>
+<p><strong>Why this is elegant:</strong> the prediction is literally a weighted average of the observed <span class="arithmatex">\(\mathbf{y}\)</span>'s, where the weights come from how "kernel-similar" <span class="arithmatex">\(\mathbf{x}_*\)</span> is to each training point. And you get the variance — a rigorous, built-in error bar — for free, from the same formula. Far from any training point, <span class="arithmatex">\(\mathbf{k}_* \to 0\)</span>, so <span class="arithmatex">\(\bar f_* \to 0\)</span> (falls back to the prior) and <span class="arithmatex">\(\mathbb{V}[f_*] \to k_{**}\)</span> (uncertainty grows to its maximum).</p>
+<h3 id="55-why-gpr-matters-for-materialscatalysis-workflows">5.5 Why GPR Matters for Materials/Catalysis Workflows<a class="headerlink" href="#55-why-gpr-matters-for-materialscatalysis-workflows" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Machine-learned interatomic potentials (GAP):</strong> Gaussian Approximation Potentials fit the local energy of an atomic environment (often described with an ACSF-like or SOAP descriptor as the kernel input) directly as a GP, giving forces/energies at a fraction of DFT cost, <em>with</em> an uncertainty estimate on every prediction.</li>
+<li><strong>Active learning for expensive DFT/ab initio data:</strong> the posterior variance tells you exactly <em>where</em> your surrogate model is unreliable, so you can select the next structure to run in VASP/QE as the one with the highest predicted variance — squeezing maximum information out of every expensive calculation.</li>
+<li><strong>Bayesian optimization for catalyst/composition screening:</strong> GPR is the surrogate model inside Bayesian optimization loops that search catalyst composition or adsorption-site space for optimal binding energy (e.g. sitting near the peak of a Sabatier volcano) using far fewer DFT evaluations than a grid search.</li>
+<li><strong>Uncertainty-aware property prediction:</strong> unlike a plain neural network point-estimate, a GP tells you "trust this formation-energy prediction" vs. "this structure is far from anything in the training set, don't trust it" — valuable when screening large hypothetical structure databases.</li>
+</ul>
+<p><strong>One-line summary:</strong> a Gaussian Process treats <em>"what function fits my data"</em> itself as a random variable with a Gaussian distribution, and GPR is just the (closed-form) act of updating that distribution once you condition on observed points — giving you both a best-guess prediction and a mathematically honest confidence interval around it.</p>
+<hr />
+<h2 id="6-quick-comparison">6. Quick Comparison<a class="headerlink" href="#6-quick-comparison" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
-<th><span class="arithmatex">\(\ell\)</span></th>
-<th>Components</th>
-<th>Physical analogy</th>
+<th>Method</th>
+<th>Input handled</th>
+<th>Captures 3-body/angular info?</th>
+<th>Native uncertainty?</th>
+<th>Typical use</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>0</td>
-<td>1</td>
-<td>scalar (mass, charge, energy)</td>
+<td>Coulomb Matrix</td>
+<td>Molecules/clusters (fixed N)</td>
+<td>No</td>
+<td>No</td>
+<td>Small-molecule property prediction</td>
 </tr>
 <tr>
-<td>1</td>
-<td>3</td>
-<td>vector (position offset, velocity, force)</td>
+<td>ACSF</td>
+<td>Periodic/local environments</td>
+<td>Yes (angular term)</td>
+<td>No</td>
+<td>Interatomic potentials, local energies</td>
 </tr>
 <tr>
-<td>2</td>
-<td>5</td>
-<td>quadrupole-like directional tensor</td>
+<td>Crystal Graph (MPNN/CGCNN)</td>
+<td>Arbitrary periodic structures</td>
+<td>Yes (via edges + message passing)</td>
+<td>No (unless made Bayesian)</td>
+<td>Bulk property prediction (formation energy, band gap)</td>
 </tr>
 <tr>
-<td><span class="arithmatex">\(\ell \geq 2\)</span></td>
-<td><span class="arithmatex">\(2\ell+1\)</span></td>
-<td>increasingly fine angular detail (orbital-lobe-like shapes)</td>
+<td>GPR (on top of any descriptor above)</td>
+<td>Any fixed-length fingerprint</td>
+<td>Depends on descriptor used</td>
+<td><strong>Yes, built-in</strong></td>
+<td>Surrogate potentials (GAP), active learning, Bayesian optimization</td>
 </tr>
 </tbody>
 </table>
-<h3 id="12-how-rotation-acts-on-each-block">1.2 How rotation acts on each block<a class="headerlink" href="#12-how-rotation-acts-on-each-block" title="Permanent link">&para;</a></h3>
-<p>Under a rotation <span class="arithmatex">\(R\)</span>, each degree-<span class="arithmatex">\(\ell\)</span> block transforms by its own <span class="arithmatex">\((2\ell+1)\times(2\ell+1)\)</span> <strong>Wigner-D matrix</strong> <span class="arithmatex">\(D^{(\ell)}(R)\)</span>:</p>
-<div class="arithmatex">\[
-\mathbf{f}^{(\ell)} \;\longrightarrow\; D^{(\ell)}(R)\,\mathbf{f}^{(\ell)}
-\]</div>
-<p><span class="arithmatex">\(D^{(\ell)}(R)\)</span> is unitary, so it rotates the block without stretching or shrinking it — exactly what "rotating a physical quantity" should mean mathematically. <span class="arithmatex">\(D^{(0)}(R) = 1\)</span> (a scalar doesn't change), <span class="arithmatex">\(D^{(1)}(R) = R\)</span> itself (a vector rotates like the coordinates do).</p>
-<p><strong>Simple explanation:</strong> instead of one flat list of numbers per atom, EquiformerV2 keeps a scalar "shelf" (<span class="arithmatex">\(\ell=0\)</span>), a vector "shelf" (<span class="arithmatex">\(\ell=1\)</span>, like little 3D arrows), a quadrupole "shelf" (<span class="arithmatex">\(\ell=2\)</span>), and so on — each shelf has its own well-defined rule for how it spins when you rotate the molecule.</p>
-<hr />
-<h2 id="2-replacing-3d-multiplication-escn-convolutions">2. Replacing 3D Multiplication: eSCN Convolutions<a class="headerlink" href="#2-replacing-3d-multiplication-escn-convolutions" title="Permanent link">&para;</a></h2>
-<h3 id="21-why-the-naive-approach-is-slow">2.1 Why the naive approach is slow<a class="headerlink" href="#21-why-the-naive-approach-is-slow" title="Permanent link">&para;</a></h3>
-<p>Mixing information between two irreps of degree <span class="arithmatex">\(\ell_1\)</span> and <span class="arithmatex">\(\ell_2\)</span> to produce a new degree-<span class="arithmatex">\(\ell_3\)</span> feature uses the <strong>Clebsch–Gordan tensor product</strong>:</p>
-<div class="arithmatex">\[
-\left(\mathbf{f}^{(\ell_1)} \otimes \mathbf{g}^{(\ell_2)}\right)^{(\ell_3)}_{m_3} = \sum_{m_1=-\ell_1}^{\ell_1}\sum_{m_2=-\ell_2}^{\ell_2} C^{\ell_3 m_3}_{\ell_1 m_1,\, \ell_2 m_2}\; f^{(\ell_1)}_{m_1}\, g^{(\ell_2)}_{m_2}
-\]</div>
-<p>The <span class="arithmatex">\(C^{\ell_3 m_3}_{\ell_1 m_1, \ell_2 m_2}\)</span> are fixed Clebsch–Gordan coefficients (standard angular-momentum coupling constants from quantum mechanics). Computing this for <em>every</em> pair of degrees up to a maximum <span class="arithmatex">\(L_{\max}\)</span> costs <span class="arithmatex">\(O(L_{\max}^6)\)</span> operations — it blows up fast as you add angular resolution.</p>
-<h3 id="22-the-escn-trick-align-then-do-2d-math">2.2 The eSCN trick: align, then do 2D math<a class="headerlink" href="#22-the-escn-trick-align-then-do-2d-math" title="Permanent link">&para;</a></h3>
-<ol>
-<li><strong>Compute the alignment rotation.</strong> From the bond vector between atoms <span class="arithmatex">\(i\)</span> and <span class="arithmatex">\(j\)</span>, <span class="arithmatex">\(\hat{\mathbf{r}}_{ij} = (\mathbf{R}_j-\mathbf{R}_i)/\lVert \mathbf{R}_j-\mathbf{R}_i\rVert\)</span>, build the Wigner-D matrix <span class="arithmatex">\(\mathbf{D}(\mathbf{R}_{ij})\)</span> that would rotate <span class="arithmatex">\(\hat{\mathbf{r}}_{ij}\)</span> onto the <span class="arithmatex">\(z\)</span>-axis.</li>
-<li><strong>Rotate both atoms' features into that frame:</strong></li>
-</ol>
-<div class="arithmatex">\[
-\mathbf{f}_{\text{aligned}} = \mathbf{D}(\mathbf{R}_{ij}) \cdot \mathbf{f}
-\]</div>
-<ol>
-<li><strong>Exploit the alignment.</strong> Spherical harmonics evaluated exactly on the <span class="arithmatex">\(z\)</span>-axis vanish for every <span class="arithmatex">\(m \neq 0\)</span>. This means once the bond is aligned to <span class="arithmatex">\(z\)</span>, the tensor product's dependence on the bond direction collapses to a small set of <span class="arithmatex">\(m\)</span>-indexed channels, and the coupling across those channels behaves like independent 2D (planar) rotations — the group reduces from <span class="arithmatex">\(SO(3)\)</span> to <span class="arithmatex">\(SO(2)\)</span> per channel. So a learnable <strong>per-<span class="arithmatex">\((\ell,m)\)</span> linear layer</strong> (<span class="arithmatex">\(SO(2)\)</span>-linear layer, weights <span class="arithmatex">\(W_{\ell,m}\)</span>) can replace the full Clebsch-Gordan contraction:</li>
-</ol>
-<div class="arithmatex">\[
-\mathbf{h}_{\ell,m} = W_{\ell,m}\, \mathbf{f}_{\text{aligned},\,\ell,m}
-\]</div>
-<ol>
-<li><strong>Rotate back</strong> with the inverse (= transpose, since <span class="arithmatex">\(\mathbf{D}\)</span> is unitary) rotation: <span class="arithmatex">\(\mathbf{h} = \mathbf{D}(\mathbf{R}_{ij})^{\top}\, \mathbf{h}_{\text{aligned}}\)</span>.</li>
-</ol>
-<p>This drops the cost from <span class="arithmatex">\(O(L_{\max}^6)\)</span> to roughly <span class="arithmatex">\(O(L_{\max}^3)\)</span>, which is what lets EquiformerV2 push to higher <span class="arithmatex">\(L_{\max}\)</span> (more angular detail) than older equivariant networks at the same compute budget.</p>
-<p><strong>Simple explanation:</strong> instead of multiplying two spinning globes at odd angles to each other, twist both globes until their poles line up on the same axis, do simple flat (2D) arithmetic, then twist everything back to where it started.</p>
-<hr />
-<h2 id="3-stabilizing-the-network-separable-layer-normalization-sln">3. Stabilizing the Network: Separable Layer Normalization (SLN)<a class="headerlink" href="#3-stabilizing-the-network-separable-layer-normalization-sln" title="Permanent link">&para;</a></h2>
-<p>Ordinary layer norm forces a feature to have mean 0, variance 1 — but shifting or rescaling the <em>direction</em> of a physical vector by an arbitrary learned offset would break equivariance (a force vector's <em>direction</em> is physically meaningful; you can't zero-center it). SLN normalizes <strong>magnitude only</strong>, never direction, and treats scalars and higher-degree tensors separately:</p>
-<p><strong>Scalars (<span class="arithmatex">\(\ell=0\)</span>)</strong> — ordinary layer norm is safe, since a scalar has no direction to preserve:</p>
-<div class="arithmatex">\[
-\hat{\mathbf{f}}^{(0)} = \frac{\mathbf{f}^{(0)}-\mu}{\sqrt{\sigma_0^2+\epsilon}}
-\]</div>
-<p><strong>Vectors/tensors (<span class="arithmatex">\(\ell \geq 1\)</span>)</strong> — compute a single collective variance from the <em>norms</em> of all higher-degree blocks (never touching their directional components), then divide every block by that shared scale:</p>
-<div class="arithmatex">\[
-\sigma_{\text{vec}}^2 = \frac{1}{L}\sum_{\ell=1}^{L} \big\lVert \mathbf{f}^{(\ell)} \big\rVert^2, \qquad
-\hat{\mathbf{f}}^{(\ell)} = \frac{\mathbf{f}^{(\ell)}}{\sqrt{\sigma_{\text{vec}}^2+\epsilon}}
-\]</div>
-<p>Because every degree-<span class="arithmatex">\(\ell\)</span> block is divided by the <em>same</em> scalar <span class="arithmatex">\(\sqrt{\sigma_{\text{vec}}^2+\epsilon}\)</span>, and scaling a vector by a scalar doesn't change its direction, equivariance is preserved exactly.</p>
-<p><strong>Simple explanation:</strong> it reins in how big the directional "arrows" are allowed to get during training, without ever nudging which way they point.</p>
-<hr />
-<h2 id="4-vector-non-linearity-separable-s2-activation">4. Vector Non-Linearity: Separable <span class="arithmatex">\(S^2\)</span> Activation<a class="headerlink" href="#4-vector-non-linearity-separable-s2-activation" title="Permanent link">&para;</a></h2>
-<p>You can't apply ReLU coordinate-by-coordinate to a vector (zeroing just the negative <span class="arithmatex">\(x\)</span>-component while leaving <span class="arithmatex">\(y,z\)</span> alone physically rotates the vector's meaning, breaking equivariance). EquiformerV2's fix:</p>
-<ol>
-<li><strong>Forward transform to the sphere.</strong> Using the <em>inverse</em> spherical harmonic transform, evaluate the irrep features as a smooth scalar function sampled at grid points <span class="arithmatex">\((\theta,\phi)\)</span> on a virtual unit sphere:</li>
-</ol>
-<div class="arithmatex">\[
-v(\theta,\phi) = \sum_{\ell=0}^{L}\sum_{m=-\ell}^{\ell} f_{\ell m}\, Y_\ell^m(\theta,\phi)
-\]</div>
-<ol>
-<li><strong>Apply an ordinary pointwise activation</strong> (Swish/SiLU or ReLU) — safe now, because each grid value is just a plain number, not a directional coordinate:</li>
-</ol>
-<div class="arithmatex">\[
-v'(\theta,\phi) = \text{Swish}\big(v(\theta,\phi)\big)
-\]</div>
-<ol>
-<li><strong>Project back</strong> via the <em>forward</em> spherical harmonic transform (numerically, a weighted sum over the sampled grid points):</li>
-</ol>
-<div class="arithmatex">\[
-f'_{\ell m} = \int v'(\theta,\phi)\, Y_\ell^m(\theta,\phi)\, d\Omega
-\]</div>
-<p>Since rotating the original irreps rotates the sampling grid on the sphere but does not change the <em>values</em> sampled at each physical point, and the activation acts identically at every point, the whole round-trip stays equivariant.</p>
-<p><strong>Simple explanation:</strong> unfold every directional feature onto the surface of a globe, squash the numbers at each point on the globe with an ordinary activation function, then fold the globe back into directional form.</p>
-<hr />
-<h2 id="5-the-transformer-part-equivariant-graph-attention">5. The Transformer Part: Equivariant Graph Attention<a class="headerlink" href="#5-the-transformer-part-equivariant-graph-attention" title="Permanent link">&para;</a></h2>
-<p>EquiformerV2 is a <em>Transformer</em>, so messages between atoms are weighted by learned <strong>attention</strong>, not just summed uniformly. The trick for keeping this equivariant: attention <em>weights</em> are always plain scalars (computed only from invariant, <span class="arithmatex">\(\ell=0\)</span> information plus the bond distance), and a scalar multiplying an equivariant tensor is still equivariant.</p>
-<div class="arithmatex">\[
-\alpha_{ij} = \text{softmax}_j\Big(\mathbf{a}^{\top}\, \text{LeakyReLU}\big(W_Q \mathbf{f}_i^{(0)} \,\Vert\, W_K \mathbf{f}_j^{(0)} \,\Vert\, \text{RBF}(\lVert \mathbf{r}_{ij}\rVert)\big)\Big)
-\]</div>
-<div class="arithmatex">\[
-\mathbf{m}_{ij} = \alpha_{ij}\cdot \big(W_V\, \mathbf{f}_j\big), \qquad
-\mathbf{f}_i \leftarrow \mathbf{f}_i + \sum_{j\in\mathcal{N}(i)} \mathbf{m}_{ij}
-\]</div>
-<ul>
-<li><span class="arithmatex">\(\text{RBF}(\lVert\mathbf{r}_{ij}\rVert)\)</span>: a Gaussian radial-basis expansion of the bond length, e.g. <span class="arithmatex">\(\sum_k \exp\!\big(-(r-\mu_k)^2/2\sigma^2\big)\)</span>, giving the attention score explicit access to <em>how far apart</em> the atoms are, independent of the angular (irrep) channels.</li>
-<li><span class="arithmatex">\(W_V \mathbf{f}_j\)</span>: the "value" is the <em>full</em> multi-degree feature of neighbor <span class="arithmatex">\(j\)</span> (scalars through degree <span class="arithmatex">\(L\)</span>), passed through the eSCN machinery described in Section 2.</li>
-<li>Because <span class="arithmatex">\(\alpha_{ij}\)</span> is a plain scalar and <span class="arithmatex">\(W_V\mathbf{f}_j\)</span> is equivariant, their product <span class="arithmatex">\(\mathbf{m}_{ij}\)</span> is still equivariant — attention adds <em>learned importance weighting</em> on top of the geometry without ever touching direction directly.</li>
-</ul>
-<p><strong>Simple explanation:</strong> each atom asks its neighbors "how relevant are you to me right now?" using only distance and rotation-blind (scalar) information, then scales each neighbor's full directional message by that relevance score before adding it in.</p>
-<hr />
-<h2 id="6-summary-of-the-data-flow">6. Summary of the Data Flow<a class="headerlink" href="#6-summary-of-the-data-flow" title="Permanent link">&para;</a></h2>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>[3D Graph of Atoms]
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>       │
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>       ▼
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>[Convert to Irreps Vectors f]  ──────────────►  Split into Scalars (ℓ=0), Vectors (ℓ=1), Higher tensors (ℓ≥2)
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>       │
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>       ▼
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>[Equivariant Graph Attention] ───────────────►  Score neighbors via scalar+distance info (softmax weights)
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>       │
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>       ▼
-</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>[eSCN Convolutions]        ──────────────────►  Twist bond to Z-axis → fast SO(2) math → twist back
-</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>       │
-</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>       ▼
-</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>[Separable Layer Normalization] ─────────────►  Normalize magnitudes only, directions untouched
-</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>       │
-</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>       ▼
-</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>[Separable S² Activation]   ─────────────────►  Map to sphere → apply Swish/ReLU → map back
-</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>       │
-</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>       ▼
-</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>[Final Predictions] ─────────────────────────►  Invariant total Energy (ℓ=0) + Equivariant Forces (ℓ=1)
-</span></code></pre></div>
-<hr />
-<h2 id="7-why-this-matters-for-dft-adjacent-workflows">7. Why This Matters for DFT-Adjacent Workflows<a class="headerlink" href="#7-why-this-matters-for-dft-adjacent-workflows" title="Permanent link">&para;</a></h2>
-<p>EquiformerV2-style models are trained on datasets like the <strong>Open Catalyst Project (OC20/OC22)</strong> — large sets of DFT-relaxed adsorbate–slab structures with energies and forces — precisely to act as a fast surrogate for expensive VASP/QE single points. In practice this shows up as:</p>
-<ul>
-<li><strong>High-throughput catalyst/adsorption screening:</strong> instead of running a full DFT relaxation for every candidate surface + adsorbate configuration in a Sabatier-volcano-style scan, the model gives near-DFT-accuracy energies/forces in milliseconds, letting you pre-filter candidates before committing VASP/QE time to the promising ones.</li>
-<li><strong>Faster geometry relaxation / MD:</strong> the model's predicted forces can drive structure optimization or short MD trajectories directly, with DFT reserved for final validation of the converged structures.</li>
-<li><strong>Force-constant-adjacent uses:</strong> while not a substitute for a proper <code>FORCE_CONSTANTS</code>/<code>fc3.hdf5</code> calculation, finite-difference or autodiff Hessians from a trained equivariant model can flag which candidate structures are worth the cost of a full phono3py third-order force-constant run.</li>
-</ul>
 
 
 
@@ -13182,7 +13229,7 @@ f'_{\ell m} = \int v'(\theta,\phi)\, Y_\ell^m(\theta,\phi)\, d\Omega
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../ML_descriptors/" class="md-footer__link md-footer__link--prev" aria-label="Previous: ML Descriptors">
+          <a href="../ML_basics/" class="md-footer__link md-footer__link--prev" aria-label="Previous: ML basics">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -13192,7 +13239,7 @@ f'_{\ell m} = \int v'(\theta,\phi)\, Y_\ell^m(\theta,\phi)\, d\Omega
                 Previous
               </span>
               <div class="md-ellipsis">
-                ML Descriptors
+                ML basics
               </div>
             </div>
           </a>
