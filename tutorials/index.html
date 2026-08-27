@@ -13030,20 +13030,103 @@
 </span><span id="__span-10-9"><a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>    <span class="n">cal_type</span><span class="o">=</span><span class="s1">&#39;vc-relax&#39;</span><span class="p">,</span> <span class="n">lcopy_pseudo</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">l_pseudo_GVRB</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </span></code></pre></div>
 <ul>
+<li>Create qe input file for QE calculations with option2:</li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+</div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>import glob
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>import esta.qeBag.gen_qeinput_advv as gen_qeinput
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>#location = &#39;~/pslibrary.1.0.0&#39; 
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>
+</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>ps_info = (
+</span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>            # &#39;pbesol&#39;, &#39;-*rrkjus_*&#39;,
+</span><span id="__span-11-9"><a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a>            # &#39;pbesol&#39;, &#39;-*kjpaw_*&#39;,
+</span><span id="__span-11-10"><a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a>            &#39;pbe&#39;, &#39;-*kjpaw_*&#39;,
+</span><span id="__span-11-11"><a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a>        )
+</span><span id="__span-11-12"><a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a>
+</span><span id="__span-11-13"><a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a>cal_type = &#39;relax&#39;
+</span><span id="__span-11-14"><a id="__codelineno-11-14" name="__codelineno-11-14" href="#__codelineno-11-14"></a>            # scf
+</span><span id="__span-11-15"><a id="__codelineno-11-15" name="__codelineno-11-15" href="#__codelineno-11-15"></a>            # vc-relax
+</span><span id="__span-11-16"><a id="__codelineno-11-16" name="__codelineno-11-16" href="#__codelineno-11-16"></a>
+</span><span id="__span-11-17"><a id="__codelineno-11-17" name="__codelineno-11-17" href="#__codelineno-11-17"></a>poscar_files = &#39;1POSCAR&#39;
+</span><span id="__span-11-18"><a id="__codelineno-11-18" name="__codelineno-11-18" href="#__codelineno-11-18"></a>
+</span><span id="__span-11-19"><a id="__codelineno-11-19" name="__codelineno-11-19" href="#__codelineno-11-19"></a>
+</span><span id="__span-11-20"><a id="__codelineno-11-20" name="__codelineno-11-20" href="#__codelineno-11-20"></a>qe_parameters = \
+</span><span id="__span-11-21"><a id="__codelineno-11-21" name="__codelineno-11-21" href="#__codelineno-11-21"></a>{
+</span><span id="__span-11-22"><a id="__codelineno-11-22" name="__codelineno-11-22" href="#__codelineno-11-22"></a>    &#39;&amp;CONTROL&#39;: {   
+</span><span id="__span-11-23"><a id="__codelineno-11-23" name="__codelineno-11-23" href="#__codelineno-11-23"></a>    &#39;calculation&#39;: cal_type,
+</span><span id="__span-11-24"><a id="__codelineno-11-24" name="__codelineno-11-24" href="#__codelineno-11-24"></a>    &#39;restart_mode&#39;: &#39;from_scratch&#39;,
+</span><span id="__span-11-25"><a id="__codelineno-11-25" name="__codelineno-11-25" href="#__codelineno-11-25"></a>    &#39;prefix&#39;: &#39;ir&#39;,
+</span><span id="__span-11-26"><a id="__codelineno-11-26" name="__codelineno-11-26" href="#__codelineno-11-26"></a>    &#39;nstep&#39;: 400,
+</span><span id="__span-11-27"><a id="__codelineno-11-27" name="__codelineno-11-27" href="#__codelineno-11-27"></a>    &#39;max_seconds&#39;: 386000,
+</span><span id="__span-11-28"><a id="__codelineno-11-28" name="__codelineno-11-28" href="#__codelineno-11-28"></a>    &#39;pseudo_dir&#39;: &#39;./&#39;,
+</span><span id="__span-11-29"><a id="__codelineno-11-29" name="__codelineno-11-29" href="#__codelineno-11-29"></a>    &#39;outdir&#39;: &#39;./tmp&#39;,
+</span><span id="__span-11-30"><a id="__codelineno-11-30" name="__codelineno-11-30" href="#__codelineno-11-30"></a>    &#39;tstress&#39;: &#39;.true.&#39;,
+</span><span id="__span-11-31"><a id="__codelineno-11-31" name="__codelineno-11-31" href="#__codelineno-11-31"></a>    &#39;tprnfor&#39;: &#39;.true.&#39;,
+</span><span id="__span-11-32"><a id="__codelineno-11-32" name="__codelineno-11-32" href="#__codelineno-11-32"></a>    &#39;verbosity&#39;: &#39;low&#39;,
+</span><span id="__span-11-33"><a id="__codelineno-11-33" name="__codelineno-11-33" href="#__codelineno-11-33"></a>    },
+</span><span id="__span-11-34"><a id="__codelineno-11-34" name="__codelineno-11-34" href="#__codelineno-11-34"></a>
+</span><span id="__span-11-35"><a id="__codelineno-11-35" name="__codelineno-11-35" href="#__codelineno-11-35"></a> &#39;&amp;SYSTEM&#39;: {
+</span><span id="__span-11-36"><a id="__codelineno-11-36" name="__codelineno-11-36" href="#__codelineno-11-36"></a>    # &#39;ecutwfc&#39;: 60.0, 
+</span><span id="__span-11-37"><a id="__codelineno-11-37" name="__codelineno-11-37" href="#__codelineno-11-37"></a>    # &#39;ecutrho&#39;: 240.0,
+</span><span id="__span-11-38"><a id="__codelineno-11-38" name="__codelineno-11-38" href="#__codelineno-11-38"></a>    },
+</span><span id="__span-11-39"><a id="__codelineno-11-39" name="__codelineno-11-39" href="#__codelineno-11-39"></a>
+</span><span id="__span-11-40"><a id="__codelineno-11-40" name="__codelineno-11-40" href="#__codelineno-11-40"></a> &#39;&amp;ELECTRONS&#39;: {
+</span><span id="__span-11-41"><a id="__codelineno-11-41" name="__codelineno-11-41" href="#__codelineno-11-41"></a>    &quot;electron_maxstep&quot; : 400,
+</span><span id="__span-11-42"><a id="__codelineno-11-42" name="__codelineno-11-42" href="#__codelineno-11-42"></a>    #&quot;conv_thr&quot;         : &#39;1.0d-8&#39;,
+</span><span id="__span-11-43"><a id="__codelineno-11-43" name="__codelineno-11-43" href="#__codelineno-11-43"></a>    &quot;mixing_beta&quot;      : 0.3,
+</span><span id="__span-11-44"><a id="__codelineno-11-44" name="__codelineno-11-44" href="#__codelineno-11-44"></a>    #&quot;diagonalization&quot;  :&quot;cg&quot;,
+</span><span id="__span-11-45"><a id="__codelineno-11-45" name="__codelineno-11-45" href="#__codelineno-11-45"></a>    },
+</span><span id="__span-11-46"><a id="__codelineno-11-46" name="__codelineno-11-46" href="#__codelineno-11-46"></a>
+</span><span id="__span-11-47"><a id="__codelineno-11-47" name="__codelineno-11-47" href="#__codelineno-11-47"></a> &#39;&amp;IONS&#39;: {
+</span><span id="__span-11-48"><a id="__codelineno-11-48" name="__codelineno-11-48" href="#__codelineno-11-48"></a>    &#39;ion_dynamics&#39;: &#39;bfgs&#39;
+</span><span id="__span-11-49"><a id="__codelineno-11-49" name="__codelineno-11-49" href="#__codelineno-11-49"></a>    },
+</span><span id="__span-11-50"><a id="__codelineno-11-50" name="__codelineno-11-50" href="#__codelineno-11-50"></a>
+</span><span id="__span-11-51"><a id="__codelineno-11-51" name="__codelineno-11-51" href="#__codelineno-11-51"></a> &#39;&amp;CELL&#39;: {
+</span><span id="__span-11-52"><a id="__codelineno-11-52" name="__codelineno-11-52" href="#__codelineno-11-52"></a>    &#39;cell_dynamics&#39;: &#39;bfgs&#39;,
+</span><span id="__span-11-53"><a id="__codelineno-11-53" name="__codelineno-11-53" href="#__codelineno-11-53"></a>    #&quot;press_conv_thr&quot; :&#39;1.0d&#39;,
+</span><span id="__span-11-54"><a id="__codelineno-11-54" name="__codelineno-11-54" href="#__codelineno-11-54"></a>    # ! cell_dofree    =&#39;volume&#39;,!&#39;2Dxy&#39;, shape
+</span><span id="__span-11-55"><a id="__codelineno-11-55" name="__codelineno-11-55" href="#__codelineno-11-55"></a>    #&quot;cell_dofree&quot; :   &#39;shape&#39;, #&#39;z&#39;, #&#39;volume&#39;, #!&#39;2Dxy&#39;, 
+</span><span id="__span-11-56"><a id="__codelineno-11-56" name="__codelineno-11-56" href="#__codelineno-11-56"></a>                        # shape --shape keeps vol fixed and changes 
+</span><span id="__span-11-57"><a id="__codelineno-11-57" name="__codelineno-11-57" href="#__codelineno-11-57"></a>                        # lattce param ; &#39;z&#39;--&gt; only the z component
+</span><span id="__span-11-58"><a id="__codelineno-11-58" name="__codelineno-11-58" href="#__codelineno-11-58"></a>                        #  of axis 3 (v3_z) is moved
+</span><span id="__span-11-59"><a id="__codelineno-11-59" name="__codelineno-11-59" href="#__codelineno-11-59"></a>    },
+</span><span id="__span-11-60"><a id="__codelineno-11-60" name="__codelineno-11-60" href="#__codelineno-11-60"></a>
+</span><span id="__span-11-61"><a id="__codelineno-11-61" name="__codelineno-11-61" href="#__codelineno-11-61"></a>#  &#39;K_POINTS&#39;: {
+</span><span id="__span-11-62"><a id="__codelineno-11-62" name="__codelineno-11-62" href="#__codelineno-11-62"></a>#     &#39;k-grid&#39;: [1, 1, 8,  # k-grid 
+</span><span id="__span-11-63"><a id="__codelineno-11-63" name="__codelineno-11-63" href="#__codelineno-11-63"></a>#                0, 0, 0,], # shift
+</span><span id="__span-11-64"><a id="__codelineno-11-64" name="__codelineno-11-64" href="#__codelineno-11-64"></a>#     # &#39;k-grid&#39;: &#39;gamma&#39;,
+</span><span id="__span-11-65"><a id="__codelineno-11-65" name="__codelineno-11-65" href="#__codelineno-11-65"></a>#     }
+</span><span id="__span-11-66"><a id="__codelineno-11-66" name="__codelineno-11-66" href="#__codelineno-11-66"></a>
+</span><span id="__span-11-67"><a id="__codelineno-11-67" name="__codelineno-11-67" href="#__codelineno-11-67"></a> }
+</span><span id="__span-11-68"><a id="__codelineno-11-68" name="__codelineno-11-68" href="#__codelineno-11-68"></a>
+</span><span id="__span-11-69"><a id="__codelineno-11-69" name="__codelineno-11-69" href="#__codelineno-11-69"></a>posfiles=glob.glob(poscar_files) 
+</span><span id="__span-11-70"><a id="__codelineno-11-70" name="__codelineno-11-70" href="#__codelineno-11-70"></a>for ifile in posfiles:
+</span><span id="__span-11-71"><a id="__codelineno-11-71" name="__codelineno-11-71" href="#__codelineno-11-71"></a>    qe_parameters[&quot;&amp;CONTROL&quot;][&#39;outdir&#39;] += &quot;_&quot;+str(ifile) 
+</span><span id="__span-11-72"><a id="__codelineno-11-72" name="__codelineno-11-72" href="#__codelineno-11-72"></a>    qe_parameters[&quot;&amp;CONTROL&quot;][&#39;prefix&#39;] += &#39;_&#39;+str(ifile) 
+</span><span id="__span-11-73"><a id="__codelineno-11-73" name="__codelineno-11-73" href="#__codelineno-11-73"></a>    gen_qeinput.get_qe_input2(ifile, ps_info, qe_parameters, 
+</span><span id="__span-11-74"><a id="__codelineno-11-74" name="__codelineno-11-74" href="#__codelineno-11-74"></a>                              kwargs=None, lprint_cell =&#39;angstrom&#39;, 
+</span><span id="__span-11-75"><a id="__codelineno-11-75" name="__codelineno-11-75" href="#__codelineno-11-75"></a>                              cal_type=cal_type, lcopy_pseudo=True)
+</span></code></pre></div>
+<hr />
+<ul>
 <li>Generate displacements from atomic positions in the poscar for vibrational calculations.</li>
 </ul>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
 </div>
-<div class="language-py highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="kn">import</span> <span class="nn">esta</span>
-</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="kn">import</span> <span class="nn">esta.phonon.atm_displacements_selective_general_disp</span>  <span class="k">as</span> <span class="nn">atmdisp</span>
-</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>
-</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;generating postion* files for displacement of selected atoms&#39;</span><span class="p">)</span>
-</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="n">qe_part_file</span><span class="o">=</span><span class="s1">&#39;qe_part&#39;</span>    <span class="c1">#&lt;-------not need to get poscar file s........MAKE It better ....TODO</span>
-</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="n">posfile</span><span class="o">=</span><span class="s1">&#39;fix_3_init_bi_POSCAR&#39;</span> <span class="c1">#fix_rlx_3_4c_1_1e_POSCARPOSCAR&#39;</span>
-</span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a><span class="n">delta_x</span> <span class="o">=</span> <span class="mf">0.02</span> <span class="c1"># ang</span>
-</span><span id="__span-11-9"><a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a><span class="n">atmdisp</span><span class="o">.</span><span class="n">gen_disp</span><span class="p">(</span><span class="n">posfile</span><span class="p">,</span> <span class="n">qe_part_file</span><span class="p">,</span> <span class="n">delta_x</span><span class="p">)</span>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="kn">import</span> <span class="nn">esta</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="kn">import</span> <span class="nn">esta.phonon.atm_displacements_selective_general_disp</span>  <span class="k">as</span> <span class="nn">atmdisp</span>
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;generating postion* files for displacement of selected atoms&#39;</span><span class="p">)</span>
+</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="n">qe_part_file</span><span class="o">=</span><span class="s1">&#39;qe_part&#39;</span>    <span class="c1">#&lt;-------not need to get poscar file s........MAKE It better ....TODO</span>
+</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="n">posfile</span><span class="o">=</span><span class="s1">&#39;fix_3_init_bi_POSCAR&#39;</span> <span class="c1">#fix_rlx_3_4c_1_1e_POSCARPOSCAR&#39;</span>
+</span><span id="__span-12-8"><a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a><span class="n">delta_x</span> <span class="o">=</span> <span class="mf">0.02</span> <span class="c1"># ang</span>
+</span><span id="__span-12-9"><a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a><span class="n">atmdisp</span><span class="o">.</span><span class="n">gen_disp</span><span class="p">(</span><span class="n">posfile</span><span class="p">,</span> <span class="n">qe_part_file</span><span class="p">,</span> <span class="n">delta_x</span><span class="p">)</span>
 </span></code></pre></div>
 <hr />
 <ul>
@@ -13052,18 +13135,18 @@
 <div class="admonition example">
 <p class="admonition-title">Example</p>
 </div>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>import numpy as np
-</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>import glob
-</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>from esta import cf
-</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>import esta.qeBag.band_gap_xml as band_gap
-</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>
-</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>xmls=glob.glob(&quot;*.xml&quot;)
-</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>for xmlfile in xmls: 
-</span><span id="__span-12-8"><a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a>    egap, vbmdict, cbmdict = band_gap.eband_gap(xmlfile)
-</span><span id="__span-12-9"><a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a>    #print (&quot;bandgap : {} eV&quot;.format(egap))
-</span><span id="__span-12-10"><a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a>    ##print (&quot;bandgap : {} eV&quot;.format(egap*cf.har2ev))
-</span><span id="__span-12-11"><a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a>    #print(&quot;vbM dict: {} &quot;.format(vbmdict))
-</span><span id="__span-12-12"><a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a>    #print(&quot;cbm dict: {} &quot;.format(cbmdict))
+<div class="language-text highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>import numpy as np
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>import glob
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>from esta import cf
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>import esta.qeBag.band_gap_xml as band_gap
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>
+</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>xmls=glob.glob(&quot;*.xml&quot;)
+</span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>for xmlfile in xmls: 
+</span><span id="__span-13-8"><a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a>    egap, vbmdict, cbmdict = band_gap.eband_gap(xmlfile)
+</span><span id="__span-13-9"><a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a>    #print (&quot;bandgap : {} eV&quot;.format(egap))
+</span><span id="__span-13-10"><a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a>    ##print (&quot;bandgap : {} eV&quot;.format(egap*cf.har2ev))
+</span><span id="__span-13-11"><a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a>    #print(&quot;vbM dict: {} &quot;.format(vbmdict))
+</span><span id="__span-13-12"><a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a>    #print(&quot;cbm dict: {} &quot;.format(cbmdict))
 </span></code></pre></div>
 <h2 id="orca-related-files">ORCA related files<a class="headerlink" href="#orca-related-files" title="Permanent link">&para;</a></h2>
 <ul>
@@ -13072,44 +13155,44 @@
 <div class="admonition example">
 <p class="admonition-title">Example</p>
 </div>
-<div class="language-py highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>  <span class="kn">import</span> <span class="nn">glob</span>
-</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>  <span class="kn">import</span> <span class="nn">esta.orcaBag.input_orca</span> <span class="k">as</span> <span class="nn">iorca</span>
-</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>  <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>
-</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>  <span class="n">cal_type</span> <span class="o">=</span> <span class="s1">&#39;OPT&#39;</span> 
-</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>
-</span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>  <span class="n">nproc</span><span class="o">=</span><span class="s1">&#39;10&#39;</span>
-</span><span id="__span-13-8"><a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a>  <span class="n">memory</span><span class="o">=</span><span class="s1">&#39;1000&#39;</span>
-</span><span id="__span-13-9"><a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a>
-</span><span id="__span-13-10"><a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a>  <span class="c1">#-----functional and basis(may contain additional tags) together-----------</span>
-</span><span id="__span-13-11"><a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a>  <span class="n">functional</span> <span class="o">=</span> <span class="s2">&quot;BP86&quot;</span>
-</span><span id="__span-13-12"><a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a>  <span class="n">basis</span> <span class="o">=</span> <span class="s2">&quot; def2-SVP def2/J RIJCOSX &quot;</span>
-</span><span id="__span-13-13"><a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a>
-</span><span id="__span-13-14"><a id="__codelineno-13-14" name="__codelineno-13-14" href="#__codelineno-13-14"></a>
-</span><span id="__span-13-15"><a id="__codelineno-13-15" name="__codelineno-13-15" href="#__codelineno-13-15"></a>  <span class="c1">#-----None, True, or exact words-------------------------------------------</span>
-</span><span id="__span-13-16"><a id="__codelineno-13-16" name="__codelineno-13-16" href="#__codelineno-13-16"></a>  <span class="n">dispersion</span><span class="o">=</span><span class="s1">&#39;D3Zero&#39;</span> <span class="c1">#True or None  # always needed!!</span>
-</span><span id="__span-13-17"><a id="__codelineno-13-17" name="__codelineno-13-17" href="#__codelineno-13-17"></a>
-</span><span id="__span-13-18"><a id="__codelineno-13-18" name="__codelineno-13-18" href="#__codelineno-13-18"></a>  <span class="c1">#-----None or some solvent-------------------------------------------------</span>
-</span><span id="__span-13-19"><a id="__codelineno-13-19" name="__codelineno-13-19" href="#__codelineno-13-19"></a>  <span class="n">solvent</span><span class="o">=</span><span class="kc">None</span>
-</span><span id="__span-13-20"><a id="__codelineno-13-20" name="__codelineno-13-20" href="#__codelineno-13-20"></a>
-</span><span id="__span-13-21"><a id="__codelineno-13-21" name="__codelineno-13-21" href="#__codelineno-13-21"></a>  <span class="c1">#-----None or some txt-----------------------------------------------------</span>
-</span><span id="__span-13-22"><a id="__codelineno-13-22" name="__codelineno-13-22" href="#__codelineno-13-22"></a>  <span class="c1">#extra_tags = {&#39;tag1&#39;: &#39;int=ultrafine&#39;,&#39;tag2&#39;:&#39;nosymm&#39;}</span>
-</span><span id="__span-13-23"><a id="__codelineno-13-23" name="__codelineno-13-23" href="#__codelineno-13-23"></a>  <span class="n">extra_tags</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;tag3&#39;</span><span class="p">:</span><span class="s1">&#39;NoUseSym &#39;</span><span class="p">}</span>
-</span><span id="__span-13-24"><a id="__codelineno-13-24" name="__codelineno-13-24" href="#__codelineno-13-24"></a>
-</span><span id="__span-13-25"><a id="__codelineno-13-25" name="__codelineno-13-25" href="#__codelineno-13-25"></a>  <span class="c1">#---charge and spin multiplicuty=2S+1 ; for unparied e- =&gt; spin-multi = 2; </span>
-</span><span id="__span-13-26"><a id="__codelineno-13-26" name="__codelineno-13-26" href="#__codelineno-13-26"></a>  <span class="c1">#  unpaired=1</span>
-</span><span id="__span-13-27"><a id="__codelineno-13-27" name="__codelineno-13-27" href="#__codelineno-13-27"></a>  <span class="n">charge</span>  <span class="o">=</span> <span class="mi">2</span>
-</span><span id="__span-13-28"><a id="__codelineno-13-28" name="__codelineno-13-28" href="#__codelineno-13-28"></a>  <span class="n">multiplicity</span> <span class="o">=</span> <span class="mi">2</span>
-</span><span id="__span-13-29"><a id="__codelineno-13-29" name="__codelineno-13-29" href="#__codelineno-13-29"></a>  <span class="c1">#--------------------------------------------------------------------------</span>
-</span><span id="__span-13-30"><a id="__codelineno-13-30" name="__codelineno-13-30" href="#__codelineno-13-30"></a>
-</span><span id="__span-13-31"><a id="__codelineno-13-31" name="__codelineno-13-31" href="#__codelineno-13-31"></a>  <span class="n">xyz_file_list</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">&quot;*.xyz&quot;</span><span class="p">)</span>
-</span><span id="__span-13-32"><a id="__codelineno-13-32" name="__codelineno-13-32" href="#__codelineno-13-32"></a>  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;xyz files are:&#39;</span><span class="p">,</span> <span class="nb">format</span><span class="p">(</span><span class="n">xyz_file_list</span><span class="p">))</span>
-</span><span id="__span-13-33"><a id="__codelineno-13-33" name="__codelineno-13-33" href="#__codelineno-13-33"></a>
-</span><span id="__span-13-34"><a id="__codelineno-13-34" name="__codelineno-13-34" href="#__codelineno-13-34"></a>  <span class="k">for</span> <span class="n">ii</span> <span class="ow">in</span> <span class="n">xyz_file_list</span><span class="p">:</span>
-</span><span id="__span-13-35"><a id="__codelineno-13-35" name="__codelineno-13-35" href="#__codelineno-13-35"></a>      <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;--**--**&#39;</span><span class="o">*</span><span class="mi">10</span><span class="p">)</span>
-</span><span id="__span-13-36"><a id="__codelineno-13-36" name="__codelineno-13-36" href="#__codelineno-13-36"></a>      <span class="n">orca_obj</span> <span class="o">=</span> <span class="n">iorca</span><span class="o">.</span><span class="n">GenerateInp</span><span class="p">(</span><span class="n">ii</span><span class="p">,</span> <span class="n">charge</span><span class="p">,</span> <span class="n">multiplicity</span><span class="p">,</span> <span class="n">cal_type</span><span class="p">)</span>
-</span><span id="__span-13-37"><a id="__codelineno-13-37" name="__codelineno-13-37" href="#__codelineno-13-37"></a>      <span class="n">orca_obj</span><span class="o">.</span><span class="n">write_inp</span><span class="p">(</span><span class="n">functional</span><span class="o">=</span><span class="n">functional</span><span class="p">,</span><span class="n">basis</span><span class="o">=</span><span class="n">basis</span><span class="p">,</span><span class="n">dispersion</span><span class="o">=</span><span class="n">dispersion</span><span class="p">,</span>\
-</span><span id="__span-13-38"><a id="__codelineno-13-38" name="__codelineno-13-38" href="#__codelineno-13-38"></a>              <span class="n">nproc</span><span class="o">=</span><span class="n">nproc</span><span class="p">,</span> <span class="n">memory</span><span class="o">=</span><span class="n">memory</span><span class="p">,</span> <span class="n">solvent</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">extra_tags</span><span class="o">=</span><span class="n">extra_tags</span><span class="p">)</span>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>  <span class="kn">import</span> <span class="nn">glob</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>  <span class="kn">import</span> <span class="nn">esta.orcaBag.input_orca</span> <span class="k">as</span> <span class="nn">iorca</span>
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>  <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>
+</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>  <span class="n">cal_type</span> <span class="o">=</span> <span class="s1">&#39;OPT&#39;</span> 
+</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>
+</span><span id="__span-14-7"><a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a>  <span class="n">nproc</span><span class="o">=</span><span class="s1">&#39;10&#39;</span>
+</span><span id="__span-14-8"><a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a>  <span class="n">memory</span><span class="o">=</span><span class="s1">&#39;1000&#39;</span>
+</span><span id="__span-14-9"><a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a>
+</span><span id="__span-14-10"><a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a>  <span class="c1">#-----functional and basis(may contain additional tags) together-----------</span>
+</span><span id="__span-14-11"><a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a>  <span class="n">functional</span> <span class="o">=</span> <span class="s2">&quot;BP86&quot;</span>
+</span><span id="__span-14-12"><a id="__codelineno-14-12" name="__codelineno-14-12" href="#__codelineno-14-12"></a>  <span class="n">basis</span> <span class="o">=</span> <span class="s2">&quot; def2-SVP def2/J RIJCOSX &quot;</span>
+</span><span id="__span-14-13"><a id="__codelineno-14-13" name="__codelineno-14-13" href="#__codelineno-14-13"></a>
+</span><span id="__span-14-14"><a id="__codelineno-14-14" name="__codelineno-14-14" href="#__codelineno-14-14"></a>
+</span><span id="__span-14-15"><a id="__codelineno-14-15" name="__codelineno-14-15" href="#__codelineno-14-15"></a>  <span class="c1">#-----None, True, or exact words-------------------------------------------</span>
+</span><span id="__span-14-16"><a id="__codelineno-14-16" name="__codelineno-14-16" href="#__codelineno-14-16"></a>  <span class="n">dispersion</span><span class="o">=</span><span class="s1">&#39;D3Zero&#39;</span> <span class="c1">#True or None  # always needed!!</span>
+</span><span id="__span-14-17"><a id="__codelineno-14-17" name="__codelineno-14-17" href="#__codelineno-14-17"></a>
+</span><span id="__span-14-18"><a id="__codelineno-14-18" name="__codelineno-14-18" href="#__codelineno-14-18"></a>  <span class="c1">#-----None or some solvent-------------------------------------------------</span>
+</span><span id="__span-14-19"><a id="__codelineno-14-19" name="__codelineno-14-19" href="#__codelineno-14-19"></a>  <span class="n">solvent</span><span class="o">=</span><span class="kc">None</span>
+</span><span id="__span-14-20"><a id="__codelineno-14-20" name="__codelineno-14-20" href="#__codelineno-14-20"></a>
+</span><span id="__span-14-21"><a id="__codelineno-14-21" name="__codelineno-14-21" href="#__codelineno-14-21"></a>  <span class="c1">#-----None or some txt-----------------------------------------------------</span>
+</span><span id="__span-14-22"><a id="__codelineno-14-22" name="__codelineno-14-22" href="#__codelineno-14-22"></a>  <span class="c1">#extra_tags = {&#39;tag1&#39;: &#39;int=ultrafine&#39;,&#39;tag2&#39;:&#39;nosymm&#39;}</span>
+</span><span id="__span-14-23"><a id="__codelineno-14-23" name="__codelineno-14-23" href="#__codelineno-14-23"></a>  <span class="n">extra_tags</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;tag3&#39;</span><span class="p">:</span><span class="s1">&#39;NoUseSym &#39;</span><span class="p">}</span>
+</span><span id="__span-14-24"><a id="__codelineno-14-24" name="__codelineno-14-24" href="#__codelineno-14-24"></a>
+</span><span id="__span-14-25"><a id="__codelineno-14-25" name="__codelineno-14-25" href="#__codelineno-14-25"></a>  <span class="c1">#---charge and spin multiplicuty=2S+1 ; for unparied e- =&gt; spin-multi = 2; </span>
+</span><span id="__span-14-26"><a id="__codelineno-14-26" name="__codelineno-14-26" href="#__codelineno-14-26"></a>  <span class="c1">#  unpaired=1</span>
+</span><span id="__span-14-27"><a id="__codelineno-14-27" name="__codelineno-14-27" href="#__codelineno-14-27"></a>  <span class="n">charge</span>  <span class="o">=</span> <span class="mi">2</span>
+</span><span id="__span-14-28"><a id="__codelineno-14-28" name="__codelineno-14-28" href="#__codelineno-14-28"></a>  <span class="n">multiplicity</span> <span class="o">=</span> <span class="mi">2</span>
+</span><span id="__span-14-29"><a id="__codelineno-14-29" name="__codelineno-14-29" href="#__codelineno-14-29"></a>  <span class="c1">#--------------------------------------------------------------------------</span>
+</span><span id="__span-14-30"><a id="__codelineno-14-30" name="__codelineno-14-30" href="#__codelineno-14-30"></a>
+</span><span id="__span-14-31"><a id="__codelineno-14-31" name="__codelineno-14-31" href="#__codelineno-14-31"></a>  <span class="n">xyz_file_list</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">&quot;*.xyz&quot;</span><span class="p">)</span>
+</span><span id="__span-14-32"><a id="__codelineno-14-32" name="__codelineno-14-32" href="#__codelineno-14-32"></a>  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;xyz files are:&#39;</span><span class="p">,</span> <span class="nb">format</span><span class="p">(</span><span class="n">xyz_file_list</span><span class="p">))</span>
+</span><span id="__span-14-33"><a id="__codelineno-14-33" name="__codelineno-14-33" href="#__codelineno-14-33"></a>
+</span><span id="__span-14-34"><a id="__codelineno-14-34" name="__codelineno-14-34" href="#__codelineno-14-34"></a>  <span class="k">for</span> <span class="n">ii</span> <span class="ow">in</span> <span class="n">xyz_file_list</span><span class="p">:</span>
+</span><span id="__span-14-35"><a id="__codelineno-14-35" name="__codelineno-14-35" href="#__codelineno-14-35"></a>      <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;--**--**&#39;</span><span class="o">*</span><span class="mi">10</span><span class="p">)</span>
+</span><span id="__span-14-36"><a id="__codelineno-14-36" name="__codelineno-14-36" href="#__codelineno-14-36"></a>      <span class="n">orca_obj</span> <span class="o">=</span> <span class="n">iorca</span><span class="o">.</span><span class="n">GenerateInp</span><span class="p">(</span><span class="n">ii</span><span class="p">,</span> <span class="n">charge</span><span class="p">,</span> <span class="n">multiplicity</span><span class="p">,</span> <span class="n">cal_type</span><span class="p">)</span>
+</span><span id="__span-14-37"><a id="__codelineno-14-37" name="__codelineno-14-37" href="#__codelineno-14-37"></a>      <span class="n">orca_obj</span><span class="o">.</span><span class="n">write_inp</span><span class="p">(</span><span class="n">functional</span><span class="o">=</span><span class="n">functional</span><span class="p">,</span><span class="n">basis</span><span class="o">=</span><span class="n">basis</span><span class="p">,</span><span class="n">dispersion</span><span class="o">=</span><span class="n">dispersion</span><span class="p">,</span>\
+</span><span id="__span-14-38"><a id="__codelineno-14-38" name="__codelineno-14-38" href="#__codelineno-14-38"></a>              <span class="n">nproc</span><span class="o">=</span><span class="n">nproc</span><span class="p">,</span> <span class="n">memory</span><span class="o">=</span><span class="n">memory</span><span class="p">,</span> <span class="n">solvent</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">extra_tags</span><span class="o">=</span><span class="n">extra_tags</span><span class="p">)</span>
 </span></code></pre></div>
 <!-- !!! orca_input
 
@@ -13158,9 +13241,9 @@
         ``` -->
 
 <!-- 
-        <div class="language-markdown highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="k">*</span><span class="w"> </span>Sed sagittis eleifend rutrum
-</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="k">*</span><span class="w"> </span>Donec vitae suscipit est
-</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="k">*</span><span class="w"> </span>Nulla tempor lobortis orci
+        <div class="language-markdown highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="k">*</span><span class="w"> </span>Sed sagittis eleifend rutrum
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="k">*</span><span class="w"> </span>Donec vitae suscipit est
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="k">*</span><span class="w"> </span>Nulla tempor lobortis orci
 </span></code></pre></div>
 
     === "Ordered List"
